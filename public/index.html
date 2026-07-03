@@ -3,63 +3,575 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Daniel Lahav</title>
-  <meta name="description" content="Personal academic website of Daniel Lahav">
+  <title>Daniel Lahav — Physics, Bar-Ilan University</title>
+  <meta name="description" content="Daniel Lahav is a PhD student in physics at Bar-Ilan University working on planar Hall effect magnetic sensors, magnetic anisotropy, and flexible spintronics.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cellipse cx='16' cy='16' rx='13' ry='8' fill='none' stroke='%23eb8a38' stroke-width='3' transform='rotate(-20 16 16)'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --background:        #f6f7f9;
+      --background-strong: #eef2f6;
+      --foreground:        #29456b;
+      --foreground-strong: #193b69;
+      --muted:             #667892;
+      --accent:            #eb8a38;
+      --accent-hover:      #d97726;
+      --accent-strong:     #1f406a;
+      --border:            #d8e0ea;
+      --card-bg:           #ffffff;
+      --card-hover-bg:     #fbfcfe;
+      --topbar-bg:         rgba(248,249,251,0.96);
+      --ring:              rgba(235,138,56,0.22);
+      --shadow-soft:       0 1px 0 rgba(31,64,106,0.02);
+      --shadow-lift:       0 14px 30px -26px rgba(31,64,106,0.38), 0 1px 0 rgba(31,64,106,0.04);
+      --font-serif:        'Fraunces', Georgia, serif;
+      --font-sans:         'Source Sans 3', system-ui, sans-serif;
+      --cat-orange:        #b9670f;
+      --cat-blue:          #295f9c;
+      --cat-teal:          #0d8a7b;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --background:        #0f1724;
+        --background-strong: #152236;
+        --foreground:        #dbe6f4;
+        --foreground-strong: #f6f9ff;
+        --muted:             #9fb0c5;
+        --accent:            #f0a15a;
+        --accent-hover:      #ffbc81;
+        --accent-strong:     #c5d7f0;
+        --border:            rgba(203,220,240,0.16);
+        --card-bg:           #152236;
+        --card-hover-bg:     #182740;
+        --topbar-bg:         rgba(15,23,36,0.96);
+        --ring:              rgba(240,161,90,0.22);
+        --shadow-soft:       0 1px 0 rgba(255,255,255,0.03);
+        --shadow-lift:       0 14px 30px -26px rgba(0,0,0,0.5), 0 1px 0 rgba(255,255,255,0.03);
+      }
+    }
+
     * { margin: 0; padding: 0; box-sizing: border-box; }
-
-    html, body { height: 100%; }
-
+    html { scroll-behavior: smooth; }
     body {
-      font-family: Georgia, 'Times New Roman', serif;
-      background: #fdfdfb;
-      color: #1a1a1a;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 2rem;
+      font-family: var(--font-sans);
+      background: var(--background);
+      color: var(--foreground);
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+      font-feature-settings: "rlig" 1, "calt" 1;
+    }
+    ::selection { background: rgba(235,138,56,0.18); color: var(--foreground-strong); }
+
+    a, button {
+      transition: color .16s ease, background-color .16s ease, border-color .16s ease, box-shadow .16s ease;
+    }
+    a { color: var(--foreground-strong); }
+    a:focus-visible, button:focus-visible { outline: none; box-shadow: 0 0 0 4px var(--ring); border-radius: 0.375rem; }
+
+    /* ---------- Sticky header ---------- */
+    .topbar {
+      position: sticky; top: 0; z-index: 50;
+      background: var(--topbar-bg);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+    }
+    .topbar-rail {
+      max-width: 1440px; margin-inline: auto; padding-inline: 1.5rem;
+      display: flex; align-items: center; gap: 1rem;
+      height: 3.75rem;
+    }
+    .brand {
+      font-family: var(--font-serif);
+      font-size: 1.25rem; font-weight: 600; letter-spacing: -0.01em;
+      color: var(--foreground-strong); text-decoration: none;
+      white-space: nowrap;
+    }
+    .topnav {
+      flex: 1; display: flex; justify-content: center; gap: 1.6rem;
+      overflow-x: auto; scrollbar-width: none;
+    }
+    .topnav::-webkit-scrollbar { display: none; }
+    .topnav a {
+      font-size: 0.98rem; font-weight: 600; color: var(--foreground);
+      text-decoration: none; white-space: nowrap;
+      padding: 1rem 0 calc(1rem - 3px) 0;
+      border-bottom: 3px solid transparent;
+    }
+    .topnav a:hover { color: var(--accent-hover); }
+    .topnav a.active { border-bottom-color: var(--accent); color: var(--foreground-strong); }
+    .topbar-actions { white-space: nowrap; }
+
+    /* ---------- Buttons (three variants, 1px border always) ---------- */
+    .btn {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      font-family: var(--font-sans); font-size: 0.875rem; font-weight: 600;
+      border-radius: 0.5rem; padding: 0.5rem 0.75rem;
+      text-decoration: none; cursor: pointer;
+    }
+    .btn-primary {
+      border: 1px solid var(--accent); background: var(--accent); color: #fff;
+      border-radius: 0.85rem; padding: 0.75rem 1.25rem;
+    }
+    .btn-primary:hover { background: var(--accent-hover); border-color: var(--accent-hover); }
+    .btn-ghost {
+      border: 1px solid var(--border); background: var(--card-bg); color: var(--foreground);
+    }
+    .btn-ghost:hover { border-color: var(--accent); }
+    .btn-ghost.btn-lg { border-radius: 0.85rem; padding: 0.75rem 1.25rem; }
+    @media (prefers-color-scheme: dark) {
+      .btn-primary { color: #21150a; }
     }
 
-    main {
-      max-width: 34rem;
-      text-align: center;
+    /* ---------- Layout rail ---------- */
+    .site-grid { margin-inline: auto; width: 100%; max-width: 1180px; padding-inline: 1.5rem; }
+    main { padding-bottom: 4rem; }
+    section { scroll-margin-top: 5.5rem; }
+
+    /* ---------- Hero ---------- */
+    .hero { padding-top: 4.5rem; padding-bottom: 1rem; text-align: center; }
+    .eyebrow {
+      font-size: 0.85rem; font-weight: 700; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--muted);
+    }
+    .hero h1 {
+      font-family: var(--font-serif);
+      font-size: clamp(2.6rem, 2.1rem + 1.6vw, 4.3rem);
+      line-height: 1.1; font-weight: 600;
+      color: var(--foreground-strong);
+      margin-top: 0.75rem;
+      text-wrap: balance;
+    }
+    .hero-underline {
+      margin: 1.2rem auto 0; height: 4px; width: 62px;
+      border-radius: 999px; background: var(--accent);
+    }
+    .hero p {
+      font-size: 1.2rem; line-height: 2;
+      max-width: 62ch; margin: 1.5rem auto 0;
+      text-wrap: balance;
+    }
+    .hero-actions {
+      margin-top: 2rem; display: flex; justify-content: center; gap: 0.75rem; flex-wrap: wrap;
     }
 
-    h1 {
-      font-size: clamp(2.2rem, 7vw, 3.4rem);
-      font-weight: normal;
-      letter-spacing: 0.02em;
+    /* ---------- Sections ---------- */
+    .section { margin-top: 4rem; }
+    .section-head { margin-bottom: 1.5rem; }
+    .section-head h2 {
+      font-family: var(--font-serif);
+      font-size: clamp(1.5rem, 1.3rem + 0.9vw, 2rem);
+      font-weight: 600; line-height: 1.15;
+      color: var(--foreground-strong);
+      margin-top: 0.6rem;
+    }
+    .section-head .lede { color: var(--muted); max-width: 62ch; margin-top: 0.5rem; }
+
+    /* ---------- Cards ---------- */
+    .surface-card {
+      border: 1px solid var(--border);
+      background: var(--card-bg);
+      border-radius: 0.9rem;
+      box-shadow: var(--shadow-soft);
+    }
+    .card-grid { display: grid; gap: 1.25rem; grid-template-columns: 1fr; }
+    @media (min-width: 768px)  { .card-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 1080px) { .card-grid.cols-3 { grid-template-columns: repeat(3, 1fr); } }
+
+    .research-card { padding: 1.5rem 1.5rem 1.4rem; border-left-width: 3px; }
+    .research-card:hover { border-color: rgba(235,138,56,0.32); background: var(--card-hover-bg); }
+    .research-card.cat-orange { border-left-color: var(--cat-orange); }
+    .research-card.cat-blue   { border-left-color: var(--cat-blue); }
+    .research-card.cat-teal   { border-left-color: var(--cat-teal); }
+    .research-card h3 {
+      font-family: var(--font-serif); font-size: 1.25rem; font-weight: 600;
+      color: var(--foreground-strong); line-height: 1.25;
+    }
+    .research-card p { font-size: 0.95rem; margin-top: 0.6rem; }
+
+    /* ---------- About ---------- */
+    .about-grid { display: grid; gap: 1.5rem; grid-template-columns: 1fr; align-items: start; }
+    @media (min-width: 900px) { .about-grid { grid-template-columns: minmax(0,1.65fr) minmax(300px,0.95fr); } }
+    .about-text p + p { margin-top: 1rem; }
+    .chip-row { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.25rem; }
+    .chip {
+      border: 1px solid var(--border); border-radius: 999px;
+      background: var(--background-strong);
+      padding: 0.3rem 0.85rem;
+      font-size: 0.78rem; font-weight: 600; color: var(--foreground);
+      white-space: nowrap;
     }
 
-    .rule {
-      width: 4.5rem;
-      height: 1px;
-      background: #b08d3e;
-      margin: 1.6rem auto;
+    /* ---------- Timeline (education) ---------- */
+    .timeline-card { padding: 1.5rem; }
+    .timeline-card h3 {
+      font-size: 0.85rem; font-weight: 700; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--muted);
     }
-
-    .subtitle {
-      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-      font-size: 0.95rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: #666;
+    .timeline { list-style: none; margin-top: 1.1rem; position: relative; padding-left: 1.1rem; }
+    .timeline::before {
+      content: ""; position: absolute; left: 4px; top: 6px; bottom: 6px;
+      width: 2px; border-radius: 999px; background: var(--border);
     }
+    .timeline li { position: relative; padding-left: 0.9rem; }
+    .timeline li + li { margin-top: 1.1rem; }
+    .timeline li::before {
+      content: ""; position: absolute; left: -1.1rem; top: 0.55rem;
+      width: 9px; height: 9px; border-radius: 999px;
+      background: var(--accent); border: 2px solid var(--card-bg);
+    }
+    .timeline .t-when { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+    .timeline .t-what { font-weight: 600; color: var(--foreground-strong); line-height: 1.4; margin-top: 0.1rem; }
+    .timeline .t-note { font-size: 0.88rem; color: var(--muted); line-height: 1.5; margin-top: 0.15rem; }
 
-    .note {
-      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-      font-size: 0.9rem;
-      color: #999;
-      margin-top: 3rem;
+    /* ---------- Publications ---------- */
+    .pub-list { display: grid; gap: 1.25rem; }
+    .pub-card { padding: 1.5rem 1.6rem; }
+    .pub-card:hover { border-color: rgba(235,138,56,0.32); background: var(--card-hover-bg); box-shadow: var(--shadow-lift); }
+    .pub-meta { display: flex; align-items: center; gap: 0.6rem; flex-wrap: wrap; }
+    .pub-venue { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+    .badge {
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase;
+      border-radius: 999px; padding: 0.15rem 0.6rem;
+      background: rgba(235,138,56,0.12); color: var(--cat-orange);
+      border: 1px solid rgba(235,138,56,0.35);
+    }
+    @media (prefers-color-scheme: dark) { .badge { color: var(--accent); } }
+    .pub-card h3 {
+      font-family: var(--font-serif); font-size: 1.3rem; font-weight: 600;
+      line-height: 1.3; color: var(--foreground-strong); margin-top: 0.5rem;
+      text-wrap: balance;
+    }
+    .pub-authors { font-size: 0.92rem; color: var(--muted); margin-top: 0.4rem; }
+    .pub-authors strong { color: var(--foreground); font-weight: 600; }
+    .pub-links { margin-top: 0.8rem; display: flex; gap: 1.25rem; flex-wrap: wrap; }
+    .action-link {
+      font-size: 0.95rem; font-weight: 700; color: var(--foreground-strong);
+      text-decoration: none;
+    }
+    .action-link:hover { color: var(--accent); }
+    .pub-note { font-size: 0.92rem; color: var(--muted); margin-top: 0.35rem; }
+    .pubs-footnote { color: var(--muted); font-size: 0.95rem; margin-top: 1.25rem; }
+
+    /* ---------- Talks / teaching / awards ---------- */
+    .plain-list { list-style: none; display: grid; gap: 0.9rem; }
+    .plain-list li { padding-left: 1.15rem; position: relative; }
+    .plain-list li::before {
+      content: ""; position: absolute; left: 0; top: 0.72rem;
+      width: 6px; height: 6px; border-radius: 999px; background: var(--accent);
+    }
+    .plain-list .what { font-weight: 600; color: var(--foreground-strong); }
+    .plain-list .where { color: var(--muted); font-size: 0.95rem; }
+
+    .split-grid { display: grid; gap: 1.25rem; grid-template-columns: 1fr; align-items: start; }
+    @media (min-width: 900px) { .split-grid { grid-template-columns: 1fr 1fr; } }
+    .panel { padding: 1.5rem 1.6rem; }
+    .panel h3 {
+      font-family: var(--font-serif); font-size: 1.25rem; font-weight: 600;
+      color: var(--foreground-strong);
+    }
+    .panel .plain-list { margin-top: 1rem; }
+    .panel p { font-size: 0.95rem; }
+
+    /* ---------- Footer ---------- */
+    footer {
+      border-top: 1px solid var(--border);
+      margin-top: 4.5rem; padding: 2.25rem 0 3rem;
+    }
+    .footer-inner { display: flex; flex-wrap: wrap; gap: 1rem; align-items: baseline; justify-content: space-between; }
+    .footer-name { font-family: var(--font-serif); font-weight: 600; font-size: 1.1rem; color: var(--foreground-strong); }
+    .footer-links { display: flex; gap: 1.25rem; flex-wrap: wrap; }
+    .footer-links a { font-size: 0.92rem; color: var(--muted); text-decoration: none; }
+    .footer-links a:hover { color: var(--accent); }
+    .footer-note { width: 100%; font-size: 0.85rem; color: var(--muted); }
+
+    /* ---------- Entrances ---------- */
+    .reveal { opacity: 0; transform: translateY(8px); }
+    .reveal.in { animation: rise 0.45s ease both; }
+    @keyframes rise { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .reveal { opacity: 1; transform: none; }
+      .reveal.in { animation: none; }
     }
   </style>
 </head>
 <body>
-  <main>
-    <h1>Daniel Lahav</h1>
-    <div class="rule"></div>
-    <p class="subtitle">Physics &middot; Bar-Ilan University</p>
-    <p class="note">Personal academic website &mdash; coming soon.</p>
+
+  <header class="topbar">
+    <div class="topbar-rail">
+      <a class="brand" href="#top">Daniel Lahav</a>
+      <nav class="topnav" aria-label="Sections">
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="#publications">Publications</a>
+        <a href="#teaching">Teaching</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="topbar-actions">
+        <a class="btn btn-ghost" href="mailto:daniel.lahav@biu.ac.il">Email</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <div class="site-grid">
+
+      <section class="hero">
+        <p class="eyebrow">Department of Physics &middot; Bar-Ilan University</p>
+        <h1>Daniel Lahav</h1>
+        <div class="hero-underline"></div>
+        <p>I am a PhD student in experimental condensed-matter physics, studying magnetic sensors and
+           magnetic anisotropy in patterned ferromagnetic thin films &mdash; from planar Hall effect
+           magnetometry to spintronic devices on flexible substrates.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="mailto:daniel.lahav@biu.ac.il">Get in touch</a>
+          <a class="btn btn-ghost btn-lg" href="https://orcid.org/0009-0005-8692-7951">ORCID &rarr;</a>
+        </div>
+      </section>
+
+      <section id="about" class="section reveal">
+        <div class="section-head">
+          <p class="eyebrow">About</p>
+          <h2>A short introduction</h2>
+        </div>
+        <div class="about-grid">
+          <div class="about-text">
+            <p>I am a PhD student in the Department of Physics and the Institute of Nanotechnology and
+               Advanced Materials (BINA) at Bar-Ilan University, working in the group of
+               <a href="https://sites.biu.ac.il/en/klein-lab-spintronics">Prof.&nbsp;Lior&nbsp;Klein</a>.
+               My thesis, <em>Flexible spintronics under strain</em>, examines how mechanical strain
+               reshapes magnetic anisotropy, magnetoresistance, and spin&ndash;orbit effects in thin-film
+               devices fabricated on flexible substrates.</p>
+            <p>Alongside my research I operate the sputtering, lithography, and dicing systems at
+               Bar-Ilan&rsquo;s nano-fabrication center, where I fabricate the devices I study &mdash;
+               and I build much of my own tooling, from low-noise measurement electronics to
+               micromagnetic-simulation and magneto-optical imaging software.</p>
+            <div class="chip-row">
+              <span class="chip">Planar Hall effect sensors</span>
+              <span class="chip">Flexible spintronics</span>
+              <span class="chip">Anisotropy engineering</span>
+              <span class="chip">MOKE microscopy</span>
+              <span class="chip">Micromagnetic simulation</span>
+              <span class="chip">Nanofabrication</span>
+            </div>
+          </div>
+          <div class="surface-card timeline-card">
+            <h3>Education</h3>
+            <ol class="timeline">
+              <li>
+                <div class="t-when">2024 &ndash; present</div>
+                <div class="t-what">PhD, Physics &middot; Bar-Ilan University</div>
+                <div class="t-note">Thesis: Flexible spintronics under strain &middot; advisor Prof. Lior Klein</div>
+              </li>
+              <li>
+                <div class="t-when">2022 &ndash; 2024</div>
+                <div class="t-what">MSc, Physics &middot; Bar-Ilan University</div>
+                <div class="t-note">Magna cum laude &middot; thesis: Flexible planar Hall effect sensors under strain</div>
+              </li>
+              <li>
+                <div class="t-when">2019 &ndash; 2022</div>
+                <div class="t-what">BSc, Physics &middot; Bar-Ilan University</div>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <section id="research" class="section reveal">
+        <div class="section-head">
+          <p class="eyebrow">Research</p>
+          <h2>What I work on</h2>
+        </div>
+        <div class="card-grid cols-3">
+          <div class="surface-card research-card cat-orange">
+            <h3>Planar Hall effect magnetometry</h3>
+            <p>Elliptical planar Hall effect sensors in soft permalloy films &mdash; engineering growth-
+               and shape-induced anisotropy to reach picotesla-scale resolution, extend the usable field
+               range, and understand the anisotropy physics that sets the noise floor.</p>
+          </div>
+          <div class="surface-card research-card cat-blue">
+            <h3>Flexible spintronics under strain</h3>
+            <p>Spintronic heterostructures fabricated on flexible substrates, using strain as a knob:
+               how bending and stretching modify magnetic anisotropy, anisotropic magnetoresistance,
+               and spin&ndash;orbit torques, toward magnetic devices for flexible electronics.</p>
+          </div>
+          <div class="surface-card research-card cat-teal">
+            <h3>Methods, end to end</h3>
+            <p>Thin-film deposition and device patterning, angular magnetotransport and noise
+               spectroscopy, magneto-optical Kerr effect microscopy, and GPU micromagnetic simulation
+               with MuMax3 &mdash; including the control and analysis software behind them.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="publications" class="section reveal">
+        <div class="section-head">
+          <p class="eyebrow">Publications</p>
+          <h2>Peer-reviewed publications</h2>
+        </div>
+        <div class="pub-list">
+
+          <article class="surface-card pub-card">
+            <div class="pub-meta">
+              <span class="pub-venue">Applied Sciences &middot; 2025</span>
+            </div>
+            <h3>Magnetic source detection using an array of planar Hall effect sensors and machine learning algorithms</h3>
+            <p class="pub-authors">M. Vizel, R. Alimi, <strong>D. Lahav</strong>, M. Schultz, A. Grosz, L. Klein</p>
+            <div class="pub-links">
+              <a class="action-link" href="https://doi.org/10.3390/app15020964">doi:10.3390/app15020964 &rarr;</a>
+            </div>
+          </article>
+
+          <article class="surface-card pub-card">
+            <div class="pub-meta">
+              <span class="pub-venue">Sensors &middot; 2024</span>
+              <span class="badge">Editor&rsquo;s choice</span>
+            </div>
+            <h3>Planar Hall effect magnetic sensors with extended field range</h3>
+            <p class="pub-authors"><strong>D. Lahav</strong>, M. Schultz, S. Amrusi, A. Grosz, L. Klein</p>
+            <div class="pub-links">
+              <a class="action-link" href="https://doi.org/10.3390/s24134384">doi:10.3390/s24134384 &rarr;</a>
+            </div>
+          </article>
+
+          <article class="surface-card pub-card">
+            <div class="pub-meta">
+              <span class="pub-venue">Applied Physics Letters &middot; 2023</span>
+            </div>
+            <h3>Flexible planar Hall effect sensor with sub-200&nbsp;pT resolution</h3>
+            <p class="pub-authors">H. Nhalil, <strong>D. Lahav</strong>, M. Schultz, S. Amrusi, A. Grosz, L. Klein</p>
+            <div class="pub-links">
+              <a class="action-link" href="https://doi.org/10.1063/5.0156588">doi:10.1063/5.0156588 &rarr;</a>
+            </div>
+            <p class="pub-note">Covered by
+              <a href="https://www.eurekalert.org/news-releases/995789">EurekAlert</a> and
+              <a href="https://www.jpost.com/science/article-750360">The Jerusalem Post</a>.</p>
+          </article>
+
+        </div>
+        <p class="pubs-footnote">Further manuscripts are currently under review and in preparation.</p>
+      </section>
+
+      <section id="talks" class="section reveal">
+        <div class="section-head">
+          <p class="eyebrow">Conferences</p>
+          <h2>Talks &amp; posters</h2>
+        </div>
+        <div class="split-grid">
+          <div class="surface-card panel">
+            <h3>Talks</h3>
+            <ul class="plain-list">
+              <li>
+                <div class="what">Multi-functional flexible planar Hall effect sensors</div>
+                <div class="where">2025 Joint MMM-Intermag Conference</div>
+              </li>
+              <li>
+                <div class="what">Multi-functional flexible planar Hall effect sensors</div>
+                <div class="where">2025 BINA Conference, Bar-Ilan University</div>
+              </li>
+            </ul>
+          </div>
+          <div class="surface-card panel">
+            <h3>Posters</h3>
+            <ul class="plain-list">
+              <li>
+                <div class="what">Expanding the field range of PHE sensors for increased industrial applicability</div>
+                <div class="where">2025 Joint MMM-Intermag &middot; iSIM 2025</div>
+              </li>
+              <li>
+                <div class="what">Multi-functional flexible planar Hall effect sensors</div>
+                <div class="where">International Symposium on Integrated Magnetics (iSIM) 2025</div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="teaching" class="section reveal">
+        <div class="section-head">
+          <p class="eyebrow">Teaching</p>
+          <h2>Teaching</h2>
+        </div>
+        <div class="split-grid">
+          <div class="surface-card panel">
+            <h3>Teaching assistant</h3>
+            <p style="margin-top:0.5rem;">Undergraduate laboratory courses at Bar-Ilan University, 2022 &ndash; present.</p>
+            <ul class="plain-list" style="margin-top:1rem;">
+              <li><div class="what">Electronics Lab</div></li>
+              <li><div class="what">Computerized Physics Lab</div></li>
+              <li><div class="what">General Physics Lab</div></li>
+              <li><div class="what">Preparatory Physics Lab</div></li>
+            </ul>
+          </div>
+          <div class="surface-card panel">
+            <h3>Recognition</h3>
+            <ul class="plain-list" style="margin-top:1rem;">
+              <li>
+                <div class="what">President&rsquo;s Scholarship for Outstanding Doctoral Fellows</div>
+                <div class="where">Bar-Ilan University &middot; 2024 &ndash; 2025</div>
+              </li>
+              <li>
+                <div class="what">Outstanding Students Scholarship</div>
+                <div class="where">Institute of Nanotechnology and Advanced Materials (BINA) &middot; 2024 &ndash; 2026</div>
+              </li>
+              <li>
+                <div class="what">MSc in Physics, magna cum laude</div>
+                <div class="where">Bar-Ilan University &middot; 2024</div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <footer id="contact">
+      <div class="site-grid footer-inner">
+        <span class="footer-name">Daniel Lahav</span>
+        <div class="footer-links">
+          <a href="mailto:daniel.lahav@biu.ac.il">daniel.lahav@biu.ac.il</a>
+          <a href="https://orcid.org/0009-0005-8692-7951">ORCID</a>
+          <a href="https://sites.biu.ac.il/en/klein-lab-spintronics">Klein lab</a>
+        </div>
+        <span class="footer-note">Department of Physics &amp; Institute of Nanotechnology and Advanced Materials, Bar-Ilan University, Ramat-Gan, Israel.</span>
+      </div>
+    </footer>
   </main>
+
+  <script>
+    (function () {
+      var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      // Gentle section entrances
+      if (!reduced && 'IntersectionObserver' in window) {
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) {
+            if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+          });
+        }, { rootMargin: '0px 0px -8% 0px' });
+        document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
+      } else {
+        document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('in'); });
+      }
+
+      // Scrollspy: 3px orange underline on the active nav link
+      var links = Array.prototype.slice.call(document.querySelectorAll('.topnav a'));
+      var ids = ['about', 'research', 'publications', 'teaching', 'contact'];
+      var sections = ids.map(function (id) { return document.getElementById(id); }).filter(Boolean);
+      function spy() {
+        var y = window.scrollY + 120;
+        var current = '';
+        sections.forEach(function (s) { if (s.offsetTop <= y) current = s.id; });
+        if (window.innerHeight + window.scrollY >= document.body.scrollHeight - 4) current = 'contact';
+        links.forEach(function (l) {
+          l.classList.toggle('active', l.getAttribute('href') === '#' + current);
+        });
+      }
+      window.addEventListener('scroll', spy, { passive: true });
+      spy();
+    })();
+  </script>
 </body>
 </html>
