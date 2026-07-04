@@ -74,7 +74,7 @@
   /* ---- Spacing / radius / elevation ---- */
   --space-2: 8px; --space-3: 12px; --space-4: 16px; --space-5: 24px;
   --space-6: 32px; --space-7: 48px; --space-8: 64px; --space-section: 96px;
-  --container: 1200px;
+  --container: 1280px; /* site-level widening from the DS's 1200px — logged in DESIGN-CHANGELOG */
   --radius-control: 8px;
   --radius-surface: 12px;
   --radius-xl: 16px;
@@ -221,6 +221,9 @@ body.menu-open { overflow: hidden; }
   font-family: var(--font-serif); font-size: 20px; line-height: 1.5;
   color: var(--text-body); max-width: 46ch;
 }
+@media (min-width: 1200px) {
+  .hero .overline { white-space: nowrap; }
+}
 .hero-actions { display: flex; flex-wrap: wrap; gap: var(--space-3); margin-top: var(--space-6); }
 
 /* Portrait — figure in a hairline-framed rounded-xl navy card */
@@ -230,17 +233,11 @@ body.menu-open { overflow: hidden; }
   max-width: 420px; justify-self: end;
 }
 .portrait-card img { width: 100%; height: auto; border-radius: calc(var(--radius-xl) - 6px); }
-.portrait-card figcaption {
-  display: flex; align-items: center; gap: 10px;
-  padding: var(--space-4) var(--space-2) var(--space-2);
-}
-.portrait-card figcaption .rule { width: 6px; height: 20px; border-radius: 2px; background: var(--gold); flex: none; }
-.portrait-card figcaption span { font-family: var(--font-sans); font-size: var(--fs-caption); color: var(--on-inverse-soft); }
-.portrait-card figcaption strong { color: var(--on-inverse); font-weight: 600; }
 
-/* Record stats — miniature big-stat unit */
+/* Record stats — miniature big-stat unit, each stat centered in its box */
 .record-stats {
-  display: flex; flex-wrap: wrap; gap: var(--space-8);
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-6);
+  text-align: center;
   margin-top: var(--space-8); padding-top: var(--space-6);
   border-top: 1px solid var(--line);
 }
@@ -297,6 +294,35 @@ body.menu-open { overflow: hidden; }
   margin-bottom: var(--space-3);
 }
 .feature-card p { font-size: var(--fs-body-md); color: var(--text-body); }
+
+/* ============ Work & resources — request-access rows ============ */
+.resources { margin-top: var(--space-7); }
+.resources h3 { font-size: 24px; letter-spacing: -0.01em; margin-bottom: var(--space-2); }
+.resources .intro { font-size: var(--fs-body-md); color: var(--text-muted); margin-bottom: var(--space-5); }
+.resource-row {
+  display: flex; align-items: center; justify-content: space-between; gap: var(--space-5);
+  padding: var(--space-4) 0; border-top: 1px solid var(--line);
+}
+.resource-row:last-of-type { border-bottom: 1px solid var(--line); }
+.resource-row .what { font-family: var(--font-sans); font-weight: 500; color: var(--text); }
+.resource-row .where { font-size: var(--fs-body-sm); color: var(--text-muted); margin-top: 2px; }
+.resource-row .btn { flex: none; }
+
+/* Request-access dialog form */
+.request-form { display: grid; gap: var(--space-4); margin-bottom: var(--space-5); }
+.field { display: grid; gap: 6px; }
+.field label {
+  font-family: var(--font-sans); font-weight: 600; font-size: var(--fs-caption);
+  color: var(--text-muted);
+}
+.field input, .field textarea {
+  font-family: var(--font-sans); font-size: var(--fs-body-md); color: var(--text);
+  background: var(--white); border: 1px solid var(--line); border-radius: var(--radius-control);
+  padding: 10px 12px; width: 100%; box-sizing: border-box;
+}
+.field textarea { resize: vertical; min-height: 72px; }
+.field input:focus-visible, .field textarea:focus-visible { outline: 2px solid var(--primary); outline-offset: 1px; }
+.dialog-note { font-size: var(--fs-caption); color: var(--text-muted); margin-top: var(--space-3); }
 
 /* ============ Publications (navy band, numbered rows) ============ */
 .pub-row {
@@ -473,11 +499,7 @@ body.menu-open { overflow: hidden; }
   .hero .gold-rule { margin-inline: auto; }
   .hero .lede { margin-inline: auto; }
   .hero-actions { justify-content: center; }
-  .record-stats {
-    justify-content: center;
-    text-align: center;
-    gap: var(--space-7);
-  }
+  .record-stats { gap: var(--space-5); }
 }
 
 @media (max-width: 768px) {
@@ -491,6 +513,8 @@ body.menu-open { overflow: hidden; }
   .pub-title { font-size: 22px; }
   .callout { padding: var(--space-6); text-align: center; justify-content: center; }
   .callout h2 { max-width: none; }
+  .resource-row { flex-wrap: wrap; }
+  .resource-row .btn { width: 100%; }
   .section-head h2 { font-size: 26px; }
   .facts-card, .outline-card, .feature-card { padding: var(--space-5); }
 }
@@ -501,10 +525,7 @@ body.menu-open { overflow: hidden; }
   .hero h1 { font-size: 34px; }
   .hero .lede { font-size: 18px; }
   .hero-actions { flex-direction: column; align-items: stretch; width: 100%; max-width: 320px; margin-inline: auto; }
-  .record-stats {
-    display: grid; grid-template-columns: repeat(3, 1fr);
-    gap: var(--space-3);
-  }
+  .record-stats { gap: var(--space-3); }
   .record-stats .stat .num { font-size: 32px; }
   .record-stats .stat .cap { font-size: 12px; }
   .top-nav .container { gap: var(--space-3); }
