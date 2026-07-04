@@ -10,8 +10,10 @@ Public personal academic website, served with GitLab Pages.
 - **To edit:** change files in `public/`, commit, push. The pipeline redeploys automatically (~1 min).
 - **Repo is private, site is public:** the project visibility is private, but Pages access is set to "Everyone" so anyone with the URL (or QR code) can view it.
 
-The page is `public/index.html` + `public/styles.css` (no build step), styled after the
-reference academic site (personal-website-52ddcd.gitlab.io/academic.html): warm cream
-paper, Arial, teal/rust/gold accents, alternating section bands. Content policy: only
+The page is `public/index.html` + `public/styles.css` (no build step), styled per Daniel's
+own "Main-Design-System" (~/Downloads/Presentation Design System — the deck-derived
+Editorial theme): cream canvas, brass gold accent, deep-navy pacing surfaces, Palatino
+display / Cambria serif / Inter UI (Cormorant Garamond + Spectral as public web
+substitutes, per the design system's own guidance). Content policy: only
 verified facts — published papers with DOIs, CV items; no unpublished manuscript titles,
 no personal emails, no unverified profile links.
