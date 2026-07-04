@@ -10,8 +10,8 @@ Public personal academic website, served with GitLab Pages.
 - **To edit:** change files in `public/`, commit, push. The pipeline redeploys automatically (~1 min).
 - **Repo is private, site is public:** the project visibility is private, but Pages access is set to "Everyone" so anyone with the URL (or QR code) can view it.
 
-The page is a single self-contained `public/index.html` (no build step) styled per the
-research-journal design brief (`research-site-v3/supporting/DESIGN_BRIEF.md`): Fraunces +
-Source Sans 3, navy on blue-gray, orange accent, mirrored dark mode. Content policy: only
+The page is `public/index.html` + `public/styles.css` (no build step), styled after the
+reference academic site (personal-website-52ddcd.gitlab.io/academic.html): warm cream
+paper, Arial, teal/rust/gold accents, alternating section bands. Content policy: only
 verified facts — published papers with DOIs, CV items; no unpublished manuscript titles,
 no personal emails, no unverified profile links.
