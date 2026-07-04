@@ -1,18 +1,8 @@
 <!doctype html>
-<html lang="en" data-theme="light">
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script>
-      (function () {
-        var t = null;
-        try { t = localStorage.getItem('theme'); } catch (e) {}
-        if (t !== 'light' && t !== 'dark') {
-          t = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-        }
-        document.documentElement.setAttribute('data-theme', t);
-      })();
-    </script>
     <meta
       name="description"
       content="Daniel Lahav - PhD student in experimental condensed matter physics at Bar-Ilan University: planar Hall effect magnetic sensors, magnetic anisotropy, and flexible spintronics under strain."
@@ -79,11 +69,29 @@
           <a href="#teaching">Teaching</a>
         </nav>
         <div class="nav-actions">
-          <button class="icon-button theme-toggle" type="button" aria-label="Toggle dark mode" title="Toggle dark mode">☾</button>
           <button class="btn btn-primary" type="button" data-open-contact>Contact</button>
+          <button class="icon-button menu-toggle" type="button" aria-label="Open menu" aria-expanded="false">&#9776;</button>
         </div>
       </div>
     </header>
+
+    <div class="menu-sheet" id="menu-sheet">
+      <div class="menu-sheet-head">
+        <a class="wordmark" href="#top" aria-label="Daniel Lahav home">
+          <span class="rule" aria-hidden="true"></span>
+          <span class="name">Daniel Lahav</span>
+        </a>
+        <button class="icon-button" type="button" data-close-menu aria-label="Close menu">&times;</button>
+      </div>
+      <nav class="menu-sheet-links" aria-label="Mobile navigation">
+        <a href="#profile">Profile</a>
+        <a href="#research">Research</a>
+        <a href="#publications">Publications</a>
+        <a href="#experience">Experience</a>
+        <a href="#teaching">Teaching</a>
+      </nav>
+      <button class="btn btn-primary" type="button" data-open-contact>Contact</button>
+    </div>
 
     <main id="main">
       <span id="top"></span>
@@ -107,7 +115,10 @@
               </div>
             </div>
             <figure class="portrait-card">
-              <img src="assets/daniel-lahav.jpg" alt="Portrait of Daniel Lahav" width="879" height="1100" fetchpriority="high">
+              <img src="assets/daniel-lahav.jpg"
+                   srcset="assets/daniel-lahav-sm.jpg 439w, assets/daniel-lahav.jpg 879w"
+                   sizes="(max-width: 900px) 216px, 420px"
+                   alt="Portrait of Daniel Lahav" width="879" height="1100" fetchpriority="high">
               <figcaption>
                 <span class="rule" aria-hidden="true"></span>
                 <span><strong>Daniel Lahav</strong> &middot; Department of Physics, Bar-Ilan University</span>
@@ -458,22 +469,28 @@
 
     <script>
       (function () {
-        // Theme toggle
-        var root = document.documentElement;
-        var toggle = document.querySelector('.theme-toggle');
-        function syncIcon() { toggle.textContent = root.getAttribute('data-theme') === 'dark' ? '☀' : '☾'; }
-        toggle.addEventListener('click', function () {
-          var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-          root.setAttribute('data-theme', next);
-          try { localStorage.setItem('theme', next); } catch (e) {}
-          syncIcon();
+        // Mobile menu sheet
+        var sheet = document.getElementById('menu-sheet');
+        var menuToggle = document.querySelector('.menu-toggle');
+        function closeMenu() {
+          sheet.classList.remove('open');
+          document.body.classList.remove('menu-open');
+          menuToggle.setAttribute('aria-expanded', 'false');
+        }
+        menuToggle.addEventListener('click', function () {
+          sheet.classList.add('open');
+          document.body.classList.add('menu-open');
+          menuToggle.setAttribute('aria-expanded', 'true');
         });
-        syncIcon();
+        sheet.querySelector('[data-close-menu]').addEventListener('click', closeMenu);
+        sheet.querySelectorAll('.menu-sheet-links a, .wordmark').forEach(function (a) {
+          a.addEventListener('click', closeMenu);
+        });
 
         // Contact dialog
         var dialog = document.getElementById('contact-dialog');
         document.querySelectorAll('[data-open-contact]').forEach(function (btn) {
-          btn.addEventListener('click', function () { dialog.showModal(); });
+          btn.addEventListener('click', function () { closeMenu(); dialog.showModal(); });
         });
         dialog.querySelector('[data-close-contact]').addEventListener('click', function () { dialog.close(); });
         dialog.addEventListener('click', function (e) {
