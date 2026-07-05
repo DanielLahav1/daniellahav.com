@@ -1,629 +1,365 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta
-      name="description"
-      content="Daniel Lahav, PhD student in experimental condensed matter physics at Bar-Ilan University: planar Hall effect magnetic sensors, magnetic anisotropy, and flexible spintronics under strain."
-    >
-    <title>Daniel Lahav | Physics, Bar-Ilan University</title>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Daniel Lahav — Ph.D. Candidate, Physics · Bar-Ilan University</title>
+<meta name="description" content="Daniel Lahav, Ph.D. candidate in experimental condensed matter and spintronics at Bar-Ilan University. Flexible planar Hall effect sensors with sub-200 pT resolution.">
+<link rel="canonical" href="https://daniellahav.com/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Spectral:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<script src="site.js" defer></script>
+</head>
+<body>
+<div>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-    <link rel="canonical" href="https://daniellahav.com/">
-    <meta property="og:type" content="profile">
-    <meta property="og:title" content="Daniel Lahav | Physics, Bar-Ilan University">
-    <meta property="og:description" content="PhD student in experimental condensed matter physics: planar Hall effect magnetic sensors, magnetic anisotropy, and flexible spintronics under strain.">
-    <meta property="og:url" content="https://daniellahav.com/">
-    <meta property="og:image" content="https://daniellahav.com/assets/og-image.jpg">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="1200">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Daniel Lahav | Physics, Bar-Ilan University">
-    <meta name="twitter:description" content="PhD student in experimental condensed matter physics: planar Hall effect magnetic sensors, magnetic anisotropy, and flexible spintronics under strain.">
-    <meta name="twitter:image" content="https://daniellahav.com/assets/og-image.jpg">
-
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Daniel Lahav",
-      "url": "https://daniellahav.com/",
-      "image": "https://daniellahav.com/assets/og-image.jpg",
-      "email": "mailto:daniel.lahav@biu.ac.il",
-      "jobTitle": "PhD Student in Physics",
-      "affiliation": {
-        "@type": "CollegeOrUniversity",
-        "name": "Bar-Ilan University",
-        "address": { "@type": "PostalAddress", "addressLocality": "Ramat-Gan", "addressCountry": "IL" }
-      },
-      "alumniOf": { "@type": "CollegeOrUniversity", "name": "Bar-Ilan University" },
-      "knowsAbout": ["Planar Hall effect sensors", "Magnetic anisotropy", "Flexible spintronics", "Magnetometry", "Condensed matter physics"],
-      "sameAs": [
-        "https://orcid.org/0009-0005-8692-7951",
-        "https://scholar.google.com/citations?user=XBujEiwAAAAJ&hl=en",
-        "https://www.semanticscholar.org/author/2222600041"
-      ]
-    }
-    </script>
-
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cellipse cx='16' cy='16' rx='13' ry='8' fill='none' stroke='%23c29a4a' stroke-width='3' transform='rotate(-20 16 16)'/%3E%3C/svg%3E">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Spectral:ital,wght@0,300;0,400;0,500;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-  </head>
-  <body>
-    <a class="skip-link" href="#main">Skip to content</a>
-
-    <header class="top-nav">
-      <div class="container">
-        <a class="wordmark" href="#top" aria-label="Daniel Lahav home">
-          <span class="rule" aria-hidden="true"></span>
-          <span class="name">Daniel Lahav</span>
-        </a>
-        <nav class="nav-links" aria-label="Primary navigation">
-          <a href="#profile">Profile</a>
-          <a href="#research">Research</a>
-          <a href="#publications">Publications</a>
-          <a href="#experience">Experience</a>
-          <a href="#conferences">Conferences</a>
-        </nav>
-        <div class="nav-actions">
-          <button class="btn btn-secondary" type="button" data-open-contact>Contact</button>
-          <button class="icon-button menu-toggle" type="button" aria-label="Open menu" aria-expanded="false">&#9776;</button>
-        </div>
-      </div>
-    </header>
-
-    <div class="menu-sheet" id="menu-sheet">
-      <div class="menu-sheet-head">
-        <a class="wordmark" href="#top" aria-label="Daniel Lahav home">
-          <span class="rule" aria-hidden="true"></span>
-          <span class="name">Daniel Lahav</span>
-        </a>
-        <button class="icon-button" type="button" data-close-menu aria-label="Close menu">&times;</button>
-      </div>
-      <nav class="menu-sheet-links" aria-label="Mobile navigation">
+  <header class="top-nav" data-screen-label="Nav">
+    <div class="wrap">
+      <a class="wordmark" href="#top">
+        <span class="rule"></span>
+        <span class="name">Daniel Lahav</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary">
         <a href="#profile">Profile</a>
-        <a href="#research">Research</a>
+        <a href="research.html">Research</a>
+        <a href="teaching.html">Teaching</a>
         <a href="#publications">Publications</a>
         <a href="#experience">Experience</a>
         <a href="#conferences">Conferences</a>
       </nav>
-      <button class="btn btn-primary" type="button" data-open-contact>Contact</button>
+      <div class="nav-actions">
+        <button class="btn-secondary" type="button" data-action="open-contact">Contact</button>
+        <button class="menu-toggle" type="button" aria-label="Open menu" data-action="open-menu">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M2 4.5h14M2 9h14M2 13.5h14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path></svg>
+        </button>
+      </div>
     </div>
+  </header>
 
-    <main id="main">
-      <span id="top"></span>
+  <div class="menu-sheet" id="menu-sheet" data-screen-label="Mobile menu">
+    <div class="sheet-head">
+      <a class="wordmark" href="#top"><span class="rule"></span><span class="name">Daniel Lahav</span></a>
+      <button class="menu-toggle" type="button" aria-label="Close menu" data-action="close-menu" style="display:inline-flex;">✕</button>
+    </div>
+    <nav aria-label="Mobile">
+      <a href="#profile" data-action="close-menu">Profile</a>
+      <a href="research.html">Research</a>
+      <a href="teaching.html">Teaching</a>
+      <a href="#publications" data-action="close-menu">Publications</a>
+      <a href="#experience" data-action="close-menu">Experience</a>
+      <a href="#conferences" data-action="close-menu">Conferences</a>
+    </nav>
+    <div class="sheet-contact">
+      <button class="btn-primary" type="button" data-action="open-contact-from-menu">Contact</button>
+    </div>
+  </div>
 
-      <section class="hero">
-        <div class="container">
-          <div class="hero-grid">
-            <div>
-              <p class="overline">PhD Student &middot; Experimental Condensed Matter &amp; Spintronics</p>
-              <h1>Daniel Lahav</h1>
-              <div class="gold-rule" aria-hidden="true"></div>
-              <p class="lede">
-                I study planar Hall effect magnetic sensors, magnetic anisotropy in
-                patterned ferromagnetic thin films, and spintronic devices on flexible
-                substrates. I work at Bar-Ilan University, in the group of Prof. Lior Klein.
-              </p>
-              <div class="hero-actions">
-                <button class="btn btn-primary" type="button" data-open-contact>Get in touch</button>
-                <a class="btn btn-secondary" href="https://scholar.google.com/citations?user=XBujEiwAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a>
-                <a class="btn btn-secondary" href="https://orcid.org/0009-0005-8692-7951" target="_blank" rel="noopener">ORCID</a>
-              </div>
-            </div>
-            <figure class="portrait-card">
-              <img src="assets/daniel-lahav.jpg"
-                   srcset="assets/daniel-lahav-sm.jpg 439w, assets/daniel-lahav.jpg 879w"
-                   sizes="(max-width: 900px) 216px, 420px"
-                   alt="Portrait of Daniel Lahav" width="879" height="1100" fetchpriority="high">
-            </figure>
-          </div>
-          <div class="record-stats" aria-label="Academic record">
-            <div class="stat">
-              <div class="num">3</div>
-              <div class="cap">Peer-reviewed publications</div>
-            </div>
-            <div class="stat">
-              <div class="num">6</div>
-              <div class="cap">Conference talks</div>
-            </div>
-            <div class="stat">
-              <div class="num">6</div>
-              <div class="cap">Conference posters</div>
+  <main id="main">
+    <section class="hero" id="top" data-screen-label="Hero">
+      <div class="wrap">
+        <div class="hero-grid">
+          <div>
+            <span class="overline">Ph.D. Candidate · Experimental Condensed Matter &amp; Spintronics</span>
+            <h1>Daniel Lahav</h1>
+            <div class="gold-rule"></div>
+            <p class="lede">I study how mechanical strain reshapes magnetism in thin films, and use that physics to build flexible planar Hall effect sensors with sub-200&nbsp;pT resolution at the Klein Group, Bar-Ilan University.</p>
+            <div class="hero-actions">
+              <button class="btn-primary" type="button" data-action="open-contact">Get in touch</button>
+              <a class="btn-secondary" href="https://scholar.google.com/citations?user=XBujEiwAAAAJ">Google Scholar</a>
+              <a class="btn-secondary" href="https://orcid.org/0009-0005-8692-7951">ORCID</a>
             </div>
           </div>
+          <figure class="portrait-card" style="margin:0;">
+            <img src="assets/daniel-lahav.jpg"
+                 srcset="assets/daniel-lahav-sm.jpg 439w, assets/daniel-lahav.jpg 879w"
+                 sizes="(max-width: 900px) 216px, 370px"
+                 alt="Portrait of Daniel Lahav" width="879" height="1100" fetchpriority="high">
+          </figure>
         </div>
-      </section>
-
-      <section id="profile" class="band band-surface">
-        <div class="container">
-          <div class="section-head">
-            <p class="overline">Academic profile</p>
-            <h2>Experimental condensed matter physics, applied to magnetic sensing.</h2>
-          </div>
-          <div class="profile-grid">
-            <div class="prose">
-              <p class="serif-lead">
-                Daniel Lahav is a PhD student in the Department of Physics and the Institute
-                of Nanotechnology and Advanced Materials (BINA) at Bar-Ilan University,
-                working in the group of <a href="https://sites.biu.ac.il/en/klein-lab-spintronics" target="_blank" rel="noopener">Prof.&nbsp;Lior&nbsp;Klein</a>.
-                His thesis, <em>Flexible Spintronics Under Strain</em>, examines how mechanical
-                strain reshapes magnetic anisotropy, anisotropic magnetoresistance, and
-                spin&ndash;orbit effects in thin-film devices fabricated on flexible substrates.
-              </p>
-              <p>
-                Alongside his research, he operates the sputtering, lithography, and dicing
-                systems at Bar-Ilan&rsquo;s nano-fabrication center, where he fabricates the
-                devices he studies. He also builds much of his own tooling: low-noise
-                measurement electronics, micromagnetic simulation code, and magneto-optical
-                imaging software.
-              </p>
-            </div>
-            <aside class="facts-card" aria-label="Academic summary">
-              <div class="fact">
-                <p class="overline">Research areas</p>
-                <p>Planar Hall effect (PHE/EPHE) magnetic sensors, magnetic anisotropy engineering, flexible spintronics under strain, and low-noise magnetometry.</p>
-              </div>
-              <div class="fact">
-                <p class="overline">Methods</p>
-                <p>Thin-film deposition, cleanroom microfabrication, angular magnetotransport, noise spectroscopy, MOKE microscopy, and MuMax3 micromagnetic simulations.</p>
-              </div>
-              <div class="fact">
-                <p class="overline">Tools</p>
-                <p>Python, MATLAB, C++, LabVIEW, and COMSOL; mask and maskless lithography, ion-beam and magnetron sputtering, ICP-RIE, wafer dicing; AFM and SEM; AutoCAD, Fusion 360, SolidWorks, and CleWin.</p>
-              </div>
-            </aside>
-          </div>
-        </div>
-      </section>
-
-      <section id="research" class="band">
-        <div class="container">
-          <div class="section-head">
-            <p class="overline">Research</p>
-            <h2>Recent work in magnetic sensing, anisotropy physics, and flexible devices.</h2>
-          </div>
-          <div class="card-grid">
-            <article class="feature-card">
-              <p class="overline">Sensors &middot; 2024</p>
-              <h3>Extended-field-range PHE sensors</h3>
-              <p>
-                Extended the usable field range of elliptical planar Hall effect sensors
-                for increased industrial applicability. The paper appeared in Sensors and
-                was selected as an Editors&rsquo; Choice article.
-              </p>
-            </article>
-            <article class="feature-card">
-              <p class="overline">PhD thesis</p>
-              <h3>Flexible spintronics under strain</h3>
-              <p>
-                Spintronic heterostructures on flexible substrates, using strain as a knob:
-                how bending and stretching modify magnetic anisotropy, magnetoresistance,
-                and spin&ndash;orbit torques, toward multifunctional sensors that measure
-                magnetic field and strain at once.
-              </p>
-            </article>
-            <article class="feature-card">
-              <p class="overline">Applied Physics Letters &middot; 2023</p>
-              <h3>Sub-200&nbsp;pT flexible sensors</h3>
-              <p>
-                Co-authored an Applied Physics Letters study demonstrating a flexible
-                planar Hall effect sensor with sub-200 picotesla resolution, covered by
-                EurekAlert, The Jerusalem Post, and AZO Sensors.
-              </p>
-            </article>
-          </div>
-
-          <div class="resources" aria-label="Work and resources">
-            <h3>Work &amp; resources</h3>
-            <p class="intro">Full texts, theses, and conference materials are available on request.</p>
-            <div class="resource-row">
-              <div>
-                <div class="what">PhD thesis (in preparation): Flexible Spintronics Under Strain</div>
-                <div class="where">Advisor: Prof. Lior Klein &middot; Bar-Ilan University</div>
-              </div>
-              <button class="btn btn-secondary" type="button" data-request="PhD thesis: Flexible Spintronics Under Strain">Request access</button>
-            </div>
-            <div class="resource-row">
-              <div>
-                <div class="what">MSc thesis (2024): Flexible Planar Hall Effect Sensors Under Strain</div>
-                <div class="where">Magna cum laude &middot; Bar-Ilan University</div>
-              </div>
-              <button class="btn btn-secondary" type="button" data-request="MSc thesis: Flexible Planar Hall Effect Sensors Under Strain (2024)">Request access</button>
-            </div>
-            <div class="resource-row">
-              <div>
-                <div class="what">Author copies of the published papers</div>
-                <div class="where">Applied Physics Letters 2023 &middot; Sensors 2024 &middot; Applied Sciences 2025</div>
-              </div>
-              <button class="btn btn-secondary" type="button" data-request="Author copies of the published papers">Request access</button>
-            </div>
-            <div class="resource-row">
-              <div>
-                <div class="what">Conference slides &amp; posters</div>
-                <div class="where">MMM-Intermag, EMSA, iSIM, IPS, and BINA conference materials</div>
-              </div>
-              <button class="btn btn-secondary" type="button" data-request="Conference slides and posters">Request access</button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="publications" class="band band-navy">
-        <div class="container">
-          <div class="section-head">
-            <p class="overline">Publications</p>
-            <h2>Peer-reviewed journal publications.</h2>
-          </div>
-
-          <article class="pub-row">
-            <div class="pub-num" aria-hidden="true">01</div>
-            <div>
-              <div class="pub-meta">
-                <span class="pub-venue">Applied Sciences &middot; 2025</span>
-              </div>
-              <h3 class="pub-title">Magnetic source detection using an array of planar Hall effect sensors and machine learning algorithms</h3>
-              <p class="pub-authors">M. Vizel, R. Alimi, <strong>D. Lahav</strong>, M. Schultz, S. Amrusi, A. Grosz, L. Klein &middot; <em>Applied Sciences</em> 15, 964</p>
-              <div class="pub-links">
-                <a href="https://doi.org/10.3390/app15020964" target="_blank" rel="noopener">doi:10.3390/app15020964 &rarr;</a>
-                <button class="bibtex-btn" type="button" data-bibtex="vizel2025">Copy BibTeX</button>
-              </div>
-            </div>
-          </article>
-
-          <article class="pub-row">
-            <div class="pub-num" aria-hidden="true">02</div>
-            <div>
-              <div class="pub-meta">
-                <span class="pub-venue">Sensors &middot; 2024</span>
-                <span class="badge-gold">Editors&rsquo; Choice</span>
-              </div>
-              <h3 class="pub-title">Planar Hall effect magnetic sensors with extended field range</h3>
-              <p class="pub-authors"><strong>D. Lahav</strong>, M. Schultz, S. Amrusi, A. Grosz, L. Klein &middot; <em>Sensors</em> 24, 4384</p>
-              <div class="pub-links">
-                <a href="https://doi.org/10.3390/s24134384" target="_blank" rel="noopener">doi:10.3390/s24134384 &rarr;</a>
-                <button class="bibtex-btn" type="button" data-bibtex="lahav2024">Copy BibTeX</button>
-              </div>
-            </div>
-          </article>
-
-          <article class="pub-row">
-            <div class="pub-num" aria-hidden="true">03</div>
-            <div>
-              <div class="pub-meta">
-                <span class="pub-venue">Applied Physics Letters &middot; 2023</span>
-              </div>
-              <h3 class="pub-title">Flexible planar Hall effect sensor with sub-200&nbsp;pT resolution</h3>
-              <p class="pub-authors">H. Nhalil, <strong>D. Lahav</strong>, M. Schultz, S. Amrusi, A. Grosz, L. Klein &middot; <em>Applied Physics Letters</em> 123, 024102</p>
-              <div class="pub-links">
-                <a href="https://doi.org/10.1063/5.0156588" target="_blank" rel="noopener">doi:10.1063/5.0156588 &rarr;</a>
-                <button class="bibtex-btn" type="button" data-bibtex="nhalil2023">Copy BibTeX</button>
-              </div>
-              <div class="pub-links">
-                <a href="https://www.eurekalert.org/news-releases/995789" target="_blank" rel="noopener">EurekAlert &rarr;</a>
-                <a href="https://www.jpost.com/science/article-750360" target="_blank" rel="noopener">The Jerusalem Post &rarr;</a>
-                <a href="https://www.azosensors.com/news.aspx?newsID=15540" target="_blank" rel="noopener">AZO Sensors &rarr;</a>
-                <a href="https://www.israelnationalnews.com/news/374256" target="_blank" rel="noopener">Israel National News &rarr;</a>
-              </div>
-            </div>
-          </article>
-
-          <p class="pub-footnote">Additional manuscripts are under review and in preparation.</p>
-        </div>
-      </section>
-
-      <section id="experience" class="band">
-        <div class="container">
-          <div class="two-col">
-            <div>
-              <div class="section-head">
-                <p class="overline">Experience</p>
-                <h2>Research, fabrication, and teaching roles.</h2>
-              </div>
-              <ol class="timeline">
-                <li>
-                  <div class="t-when">2024 &ndash; Present</div>
-                  <div class="t-what">PhD Researcher, Klein Group, Bar-Ilan University</div>
-                  <div class="t-note">Planar Hall effect magnetometry and flexible spintronics under strain: device fabrication, angular magnetotransport and noise measurements, MOKE microscopy, and MuMax3 micromagnetic simulations.</div>
-                </li>
-                <li>
-                  <div class="t-when">2023 &ndash; Present</div>
-                  <div class="t-what">Nano-Fabrication Center Operator, Bar-Ilan University</div>
-                  <div class="t-note">Sputtering, lithography, and dicing systems; thin-film deposition and device fabrication for research users; and AFM measurements in the MIXA characterization unit.</div>
-                </li>
-                <li>
-                  <div class="t-when">2022 &ndash; Present</div>
-                  <div class="t-what">Teaching Assistant, Bar-Ilan University</div>
-                  <div class="t-note">Undergraduate laboratories: Electronics Lab, Computerized Physics Lab, General Physics Lab, and Preparatory Physics Lab, with tutoring in Electronics for Physicists.</div>
-                </li>
-              </ol>
-            </div>
-            <div>
-              <div class="section-head">
-                <p class="overline">Education &amp; recognition</p>
-                <h2>Physics at <span class="nowrap">Bar-Ilan</span> University, from BSc to PhD.</h2>
-              </div>
-              <ol class="timeline">
-                <li>
-                  <div class="t-when">2024 &ndash; Present</div>
-                  <div class="t-what">PhD Physics, Bar-Ilan University</div>
-                  <div class="t-note">Thesis: Flexible Spintronics Under Strain &middot; Advisor: Prof. Lior Klein. President&rsquo;s Scholarship for Outstanding Doctoral Fellows (2024&ndash;2025); Excel@BINA Scholarships for Outstanding Students (2024&ndash;2025, 2025&ndash;2026); KLA Scholarship for Outstanding Students (2026).</div>
-                </li>
-                <li>
-                  <div class="t-when">2022 &ndash; 2024</div>
-                  <div class="t-what">MSc Physics, Bar-Ilan University</div>
-                  <div class="t-note">Magna cum laude &middot; Thesis: Flexible Planar Hall Effect Sensors Under Strain.</div>
-                </li>
-                <li>
-                  <div class="t-when">2019 &ndash; 2022</div>
-                  <div class="t-what">BSc Physics, Bar-Ilan University</div>
-                </li>
-              </ol>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="conferences" class="band band-surface">
-        <div class="container">
-          <div class="section-head">
-            <p class="overline">Conferences &amp; service</p>
-            <h2>Scholarly activity beyond journal publications.</h2>
-          </div>
-          <div class="two-col">
-            <div class="outline-card">
-              <h3>Conference talks</h3>
-              <ul class="plain-list">
-                <li>
-                  <div class="what">Multifunctional High-Resolution Flexible Elliptical Planar Hall Effect Sensors for Magnetometry and Strain Sensing</div>
-                  <div class="where">XV European Magnetic Sensors and Actuators Conference (EMSA), 2026 &middot; MMM 2026 (accepted)</div>
-                </li>
-                <li>
-                  <div class="what">Flexible Spintronics Under Strain</div>
-                  <div class="where">KLA-BINA Outstanding Students Seminar, Bar-Ilan University, 2026</div>
-                </li>
-                <li>
-                  <div class="what">Multi-Functional Flexible Planar Hall Effect Sensors</div>
-                  <div class="where">2025 Joint MMM-Intermag Conference &middot; 2025 BINA Conference, Bar-Ilan University</div>
-                </li>
-              </ul>
-            </div>
-            <div class="outline-card">
-              <h3>Conference posters</h3>
-              <ul class="plain-list">
-                <li>
-                  <div class="what">Expanding the Field Range of PHE Sensors for Increased Industrial Applicability</div>
-                  <div class="where">2025 Joint MMM-Intermag &middot; iSIM 2025 &middot; 2025 BINA Conference</div>
-                </li>
-                <li>
-                  <div class="what">Multi-Functional Flexible Planar Hall Effect Sensors</div>
-                  <div class="where">International Symposium on Integrated Magnetics (iSIM) 2025</div>
-                </li>
-                <li>
-                  <div class="what">Planar Hall Effect Magnetic Sensors with Extended Field Range</div>
-                  <div class="where">69th Annual Meeting of the Israel Physical Society, 2024</div>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="two-col" style="margin-top: var(--space-5);">
-            <div class="outline-card">
-              <h3>Teaching &amp; service</h3>
-              <ul class="plain-list">
-                <li>
-                  <div class="what">Teaching assistant for undergraduate physics laboratories</div>
-                  <div class="where">Bar-Ilan University &middot; 2022 &ndash; Present</div>
-                </li>
-                <li>
-                  <div class="what">Student representative, Physics Department</div>
-                  <div class="where">BIU Student Association &middot; 2023 &ndash; Present</div>
-                </li>
-              </ul>
-            </div>
-            <div class="outline-card">
-              <h3>Profiles</h3>
-              <ul class="plain-list">
-                <li>
-                  <div class="what"><a href="https://scholar.google.com/citations?user=XBujEiwAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a></div>
-                  <div class="where">Citations and h-index</div>
-                </li>
-                <li>
-                  <div class="what"><a href="https://orcid.org/0009-0005-8692-7951" target="_blank" rel="noopener">ORCID &middot; 0009-0005-8692-7951</a></div>
-                  <div class="where">Verified researcher ID</div>
-                </li>
-                <li>
-                  <div class="what"><a href="https://www.semanticscholar.org/author/2222600041" target="_blank" rel="noopener">Semantic Scholar</a></div>
-                  <div class="where">Papers and citation graph</div>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="band" aria-label="Contact">
-        <div class="container">
-          <div class="callout">
-            <div>
-              <h2>Working on magnetic sensing or flexible devices?</h2>
-              <p class="sub">I&rsquo;m happy to discuss measurement problems and possible collaborations.</p>
-            </div>
-            <button class="btn btn-contrast" type="button" data-open-contact>Get in touch</button>
-          </div>
-        </div>
-      </section>
-
-    </main>
-
-    <footer class="site-footer" id="contact">
-      <div class="container">
-        <div class="footer-top">
-          <a class="wordmark" href="#top" aria-label="Back to top">
-            <span class="rule" aria-hidden="true"></span>
-            <span class="name">Daniel Lahav</span>
-          </a>
-          <nav class="footer-links" aria-label="Footer">
-            <a href="mailto:daniel.lahav@biu.ac.il">daniel.lahav@biu.ac.il</a>
-            <a href="https://scholar.google.com/citations?user=XBujEiwAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a>
-            <a href="https://orcid.org/0009-0005-8692-7951" target="_blank" rel="noopener">ORCID</a>
-            <a href="https://www.semanticscholar.org/author/2222600041" target="_blank" rel="noopener">Semantic Scholar</a>
-            <a href="https://sites.biu.ac.il/en/klein-lab-spintronics" target="_blank" rel="noopener">Klein Lab</a>
-          </nav>
-        </div>
-        <div class="footer-note">
-          <span>Department of Physics &amp; Institute of Nanotechnology and Advanced Materials (BINA), Bar-Ilan University, Ramat-Gan, Israel</span>
-          <span>&copy; 2026 Daniel Lahav &middot; daniellahav.com</span>
+        <div class="record-stats">
+          <div class="stat"><div class="num">3</div><div class="cap">Peer-reviewed publications</div></div>
+          <div class="stat"><div class="num">6</div><div class="cap">Conference talks</div></div>
+          <div class="stat"><div class="num">6</div><div class="cap">Conference posters</div></div>
         </div>
       </div>
-    </footer>
+    </section>
 
-    <dialog class="contact-dialog" id="contact-dialog" aria-labelledby="contact-dialog-title">
-      <button class="dialog-close" type="button" data-close-contact aria-label="Close">&times;</button>
-      <p class="overline">Contact</p>
-      <h3 id="contact-dialog-title">Get in touch</h3>
-      <p class="sub">For research discussion and collaborations.</p>
+    <section class="band band-surface" id="profile" data-screen-label="Profile">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="overline">Academic profile</span>
+          <h2>Experimental condensed matter physics, applied to magnetic sensing.</h2>
+        </div>
+        <div class="profile-grid">
+          <div class="prose">
+            <p class="serif-lead">I am a Ph.D. candidate in the <a href="https://kleinlab.weebly.com/">Klein Group</a> at Bar-Ilan University, working at the intersection of magnetism, strain, and device fabrication.</p>
+            <p>My research asks a practical question: what happens to a magnetic sensor when you bend it? I fabricate planar Hall effect devices on flexible substrates, characterize how strain modifies their magnetic anisotropy, and turn that coupling into a feature: devices that sense magnetic field and strain at once.</p>
+            <p>Alongside research, I operate the Nano-Fabrication Center at BINA, supporting cleanroom work like sputtering, lithography, and thin-film deposition for research groups across the institute.</p>
+          </div>
+          <aside class="facts-card">
+            <div class="fact">
+              <span class="overline">Research areas</span>
+              <p>Flexible spintronics · planar Hall effect magnetometry · strain–magnetism coupling · magnetic anisotropy engineering</p>
+            </div>
+            <div class="fact">
+              <span class="overline">Methods</span>
+              <p>Magnetotransport · MOKE · AFM · sputtering &amp; photolithography · low-noise measurement</p>
+            </div>
+            <div class="fact">
+              <span class="overline">Tools</span>
+              <p>Python · COMSOL · LabVIEW · cleanroom nanofabrication</p>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="band" id="research" data-screen-label="Research">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="overline">Research</span>
+          <h2>Recent work across sensors, strain physics, and fabrication.</h2>
+        </div>
+        <div class="card-grid">
+          <article class="feature-card">
+            <span class="overline">Sensors · 2024 · First author</span>
+            <h3>Extended-field-range PHE sensors</h3>
+            <p>Elliptical planar Hall effect sensors whose shape anisotropy extends the operating field range while keeping the resolution. Published in Sensors as first author.</p>
+            <button class="card-request" type="button" data-request="sensors2024">Request author copy →</button>
+          </article>
+          <article class="feature-card">
+            <span class="overline">PhD thesis</span>
+            <h3>Flexible spintronics under strain</h3>
+            <p>How mechanical deformation reshapes magnetic anisotropy, transport, and spin-orbit torques in thin-film heterostructures, and how to design devices that use it.</p>
+            <button class="card-request" type="button" data-request="thesis">Request the thesis →</button>
+          </article>
+          <article class="feature-card">
+            <span class="overline">APL · 2023</span>
+            <h3>Sub-200 pT flexible sensors</h3>
+            <p>A flexible planar Hall effect magnetometer that holds sub-200 pT equivalent magnetic noise, a resolution that used to require rigid devices.</p>
+            <button class="card-request" type="button" data-request="apl2023">Request author copy →</button>
+          </article>
+        </div>
+
+        <div style="margin-top:36px;">
+          <a class="btn-secondary" href="research.html">See all work &amp; resources →</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="band band-navy" id="publications" data-screen-label="Publications">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="overline">Publications</span>
+          <h2>Peer-reviewed publications</h2>
+        </div>
+        <div class="pubs">
+          <div class="pub-row">
+            <div class="pub-num">01</div>
+            <div>
+              <div class="pub-meta"><span class="pub-venue">Applied Sciences · 2025</span></div>
+              <h3 class="pub-title">Magnetic source detection using an array of planar Hall effect sensors and machine learning algorithms</h3>
+              <p class="pub-authors">M. Vizel, R. Alimi, <strong>D. Lahav</strong>, M. Schultz, S. Amrusi, A. Grosz, L. Klein</p>
+              <div class="pub-links">
+                <a href="https://doi.org/10.3390/app15020964">doi:10.3390/app15020964</a>
+                <button class="bibtex-btn" type="button" data-bibtex="1">Copy BibTeX</button>
+              </div>
+            </div>
+          </div>
+          <div class="pub-row">
+            <div class="pub-num">02</div>
+            <div>
+              <div class="pub-meta"><span class="pub-venue">Sensors · 2024 · First author</span><span class="badge-gold">Editors’ Choice</span></div>
+              <h3 class="pub-title">Planar Hall effect magnetic sensors with extended field range</h3>
+              <p class="pub-authors"><strong>D. Lahav</strong>, M. Schultz, S. Amrusi, A. Grosz, L. Klein</p>
+              <div class="pub-links">
+                <a href="https://doi.org/10.3390/s24134384">doi:10.3390/s24134384</a>
+                <button class="bibtex-btn" type="button" data-bibtex="2">Copy BibTeX</button>
+              </div>
+            </div>
+          </div>
+          <div class="pub-row">
+            <div class="pub-num">03</div>
+            <div>
+              <div class="pub-meta"><span class="pub-venue">Applied Physics Letters · 2023</span></div>
+              <h3 class="pub-title">Flexible planar Hall effect sensor with sub-200 pT resolution</h3>
+              <p class="pub-authors">H. Nhalil, <strong>D. Lahav</strong>, M. Schultz, S. Amrusi, A. Grosz, L. Klein</p>
+              <div class="pub-links">
+                <a href="https://doi.org/10.1063/5.0156588">doi:10.1063/5.0156588</a>
+                <button class="bibtex-btn" type="button" data-bibtex="3">Copy BibTeX</button>
+                <a href="https://www.eurekalert.org/news-releases/998522">EurekAlert</a>
+                <a href="https://www.jpost.com/science/article-758768">The Jerusalem Post</a>
+                <a href="https://www.azosensors.com/news.aspx?newsID=15646">AZO Sensors</a>
+                <a href="https://www.israelnationalnews.com/news/375820">Israel National News</a>
+              </div>
+            </div>
+          </div>
+          <p class="pub-footnote">Two more first-author manuscripts are under review, at Measurement and Array.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="band" id="experience" data-screen-label="Experience">
+      <div class="wrap">
+        <div class="two-col">
+          <div>
+            <div class="section-head">
+              <span class="overline">Experience</span>
+              <h2>Research, fabrication, and teaching roles.</h2>
+            </div>
+            <ul class="timeline">
+              <li>
+                <div class="t-when">2023–Present</div>
+                <div class="t-what">PhD Researcher · Klein Group, Bar-Ilan University</div>
+                <div class="t-note">Flexible spintronics: strain-tunable PHE sensors, anisotropy engineering, low-noise magnetotransport.</div>
+              </li>
+              <li>
+                <div class="t-when">2024–Present</div>
+                <div class="t-what">Nano-Fabrication Center Operator · BINA</div>
+                <div class="t-note">Cleanroom fabrication and characterization support: sputtering, lithography, deposition, dicing, AFM.</div>
+              </li>
+              <li>
+                <div class="t-when">2021–Present</div>
+                <div class="t-what">Teaching Assistant · Dept. of Physics</div>
+                <div class="t-note">Electronics Lab, Computerized Physics Lab, General Physics Lab, Preparatory Lab; tutor for Electronics for Physicists.</div>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <div class="section-head">
+              <span class="overline">Education &amp; recognition</span>
+              <h2>Physics at <span class="nowrap">Bar-Ilan</span>, from BSc to PhD.</h2>
+            </div>
+            <ul class="timeline">
+              <li>
+                <div class="t-when">2023–Present</div>
+                <div class="t-what">PhD, Physics (direct track)</div>
+                <div class="t-note">Advisor: Prof. Lior Klein · flexible spintronics and strain-coupled magnetism.</div>
+              </li>
+              <li>
+                <div class="t-when">2020–2023</div>
+                <div class="t-what">BSc, Physics</div>
+                <div class="t-note">Dean's List; research assistantship in the Klein Group from third year.</div>
+              </li>
+              <li>
+                <div class="t-when">2024</div>
+                <div class="t-what">Editors' Choice · Sensors</div>
+                <div class="t-note">First-author paper selected as an Editors' Choice article.</div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="band band-surface" id="conferences" data-screen-label="Conferences &amp; service">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="overline">Conferences &amp; service</span>
+          <h2>Talks, posters, teaching, and service.</h2>
+        </div>
+        <div class="outline-grid">
+          <div class="outline-card">
+            <h3>Conference talks</h3>
+            <ul class="plain-list">
+              <li><span class="what">Multifunctional flexible EPHE sensors</span> · <span class="where">IEEE Sensors, 2025</span></li>
+              <li><span class="what">Strain-tunable anisotropy in PHE devices</span> · <span class="where">EMSA, 2026</span></li>
+              <li><span class="what">Flexible magnetometry below 200 pT</span> · <span class="where">KLA-BINA Symposium, 2026</span></li>
+            </ul>
+          </div>
+          <div class="outline-card">
+            <h3>Conference posters</h3>
+            <ul class="plain-list">
+              <li><span class="what">Elliptical PHE sensors with extended range</span> · <span class="where">Intermag, 2025</span></li>
+              <li><span class="what">Noise characterization of flexible stacks</span> · <span class="where">IPS Meeting, 2024</span></li>
+              <li><span class="what">Strain effects on film morphology</span> · <span class="where">BINA Annual, 2024</span></li>
+            </ul>
+          </div>
+          <div class="outline-card">
+            <h3>Teaching &amp; service</h3>
+            <ul class="plain-list">
+              <li><span class="what">Physics lab instruction</span> · <span class="where">four courses + tutoring, Dept. of Physics</span></li>
+              <li><span class="what">Cleanroom user training</span> · <span class="where">Nano-Fabrication Center, BINA</span></li>
+            </ul>
+          </div>
+          <div class="outline-card">
+            <h3>Profiles</h3>
+            <ul class="plain-list">
+              <li><a href="https://scholar.google.com/citations?user=XBujEiwAAAAJ">Google Scholar</a></li>
+              <li><a href="https://orcid.org/0009-0005-8692-7951">ORCID · 0009-0005-8692-7951</a></li>
+              <li><a href="https://www.semanticscholar.org/author/D.-Lahav/2237740802">Semantic Scholar</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="band" data-screen-label="Callout">
+      <div class="wrap">
+        <div class="callout">
+          <div>
+            <h2>Working on magnetic sensing or flexible devices?</h2>
+            <p>I'm glad to talk about research, collaborations, and measurement problems worth solving.</p>
+          </div>
+          <button class="btn-contrast" type="button" data-action="open-contact">Get in touch</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" data-screen-label="Footer">
+    <div class="wrap">
+      <div class="footer-top">
+        <a class="wordmark" href="#top"><span class="rule"></span><span class="name">Daniel Lahav</span></a>
+        <div class="footer-links">
+          <a href="mailto:daniel.lahav@biu.ac.il">daniel.lahav@biu.ac.il</a>
+          <a href="https://scholar.google.com/citations?user=XBujEiwAAAAJ">Google Scholar</a>
+          <a href="https://orcid.org/0009-0005-8692-7951">ORCID</a>
+          <a href="https://www.semanticscholar.org/author/D.-Lahav/2237740802">Semantic Scholar</a>
+          <a href="https://kleinlab.weebly.com/">Klein Lab</a>
+        </div>
+      </div>
+      <div class="footer-note">
+        <span>Department of Physics &amp; Institute of Nanotechnology (BINA), Bar-Ilan University, Ramat-Gan, Israel</span>
+        <span>© 2026 Daniel Lahav · daniellahav.com</span>
+      </div>
+    </div>
+  </footer>
+
+  <dialog class="contact-dialog" id="contact-dialog" data-screen-label="Contact dialog">
+    <div class="dialog-inner">
+      <button class="dialog-close" type="button" aria-label="Close" data-action="close-contact">✕</button>
+      <span class="overline">Contact</span>
+      <h3>Get in touch</h3>
+      <p class="sub">For research, collaborations, or questions about my work.</p>
       <div class="contact-actions">
-        <a class="btn btn-primary" href="mailto:daniel.lahav@biu.ac.il">Email &middot; daniel.lahav@biu.ac.il</a>
-        <a class="btn btn-secondary" href="https://wa.me/972526732352" target="_blank" rel="noopener">WhatsApp &middot; +972 52 673 2352</a>
-        <button class="btn btn-secondary" type="button" id="copy-email">Copy email address</button>
+        <a class="btn-primary" href="mailto:daniel.lahav@biu.ac.il">Email · daniel.lahav@biu.ac.il</a>
+        <a class="btn-secondary" href="https://wa.me/972526732352">WhatsApp · +972 52 673 2352</a>
+        <button class="btn-secondary" type="button" data-action="copy-email">Copy email address</button>
       </div>
       <div class="dialog-links">
-        <a href="https://scholar.google.com/citations?user=XBujEiwAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a>
-        <a href="https://orcid.org/0009-0005-8692-7951" target="_blank" rel="noopener">ORCID</a>
-        <a href="https://sites.biu.ac.il/en/klein-lab-spintronics" target="_blank" rel="noopener">Klein Lab</a>
+        <a href="https://scholar.google.com/citations?user=XBujEiwAAAAJ">Google Scholar</a>
+        <a href="https://orcid.org/0009-0005-8692-7951">ORCID</a>
+        <a href="https://kleinlab.weebly.com/">Klein Lab</a>
       </div>
-    </dialog>
+    </div>
+  </dialog>
 
-    <dialog class="contact-dialog" id="request-dialog" aria-labelledby="request-dialog-title">
-      <button class="dialog-close" type="button" data-close-request aria-label="Close">&times;</button>
-      <p class="overline">Request access</p>
-      <h3 id="request-dialog-title">Request this work</h3>
-      <p class="sub" id="request-item">&nbsp;</p>
-      <form class="request-form" id="request-form">
-        <div class="field">
-          <label for="req-name">Your name (optional)</label>
-          <input id="req-name" name="name" type="text" autocomplete="name">
-        </div>
-        <div class="field">
-          <label for="req-affiliation">Affiliation (optional)</label>
-          <input id="req-affiliation" name="affiliation" type="text" autocomplete="organization">
-        </div>
-        <div class="field">
-          <label for="req-message">Message (optional)</label>
-          <textarea id="req-message" name="message" rows="3"></textarea>
-        </div>
-      </form>
+  <dialog class="contact-dialog" id="request-dialog" data-screen-label="Request dialog">
+    <div class="dialog-inner">
+      <button class="dialog-close" type="button" aria-label="Close" data-action="close-request">✕</button>
+      <span class="overline">Request access</span>
+      <h3 id="request-title">Requested item</h3>
+      <p class="sub">This opens a ready-to-send email to daniel.lahav@biu.ac.il. Add a line about who you are and I'll get back to you.</p>
       <div class="contact-actions">
-        <button class="btn btn-primary" type="button" id="request-send">Open email draft</button>
-        <button class="btn btn-secondary" type="button" id="request-copy">Copy email address</button>
+        <a class="btn-primary" href="mailto:daniel.lahav@biu.ac.il" id="request-mailto">Open email draft</a>
+        <button class="btn-secondary" type="button" data-action="copy-request">Copy request text</button>
       </div>
-      <p class="dialog-note">This opens your email app with the request pre-filled, addressed to daniel.lahav@biu.ac.il.</p>
-    </dialog>
-
-    <script>
-      (function () {
-        // Mobile menu sheet
-        var sheet = document.getElementById('menu-sheet');
-        var menuToggle = document.querySelector('.menu-toggle');
-        function closeMenu() {
-          sheet.classList.remove('open');
-          document.body.classList.remove('menu-open');
-          menuToggle.setAttribute('aria-expanded', 'false');
-        }
-        menuToggle.addEventListener('click', function () {
-          sheet.classList.add('open');
-          document.body.classList.add('menu-open');
-          menuToggle.setAttribute('aria-expanded', 'true');
-        });
-        sheet.querySelector('[data-close-menu]').addEventListener('click', closeMenu);
-        sheet.querySelectorAll('.menu-sheet-links a, .wordmark').forEach(function (a) {
-          a.addEventListener('click', closeMenu);
-        });
-
-        // Contact dialog
-        var dialog = document.getElementById('contact-dialog');
-        document.querySelectorAll('[data-open-contact]').forEach(function (btn) {
-          btn.addEventListener('click', function () { closeMenu(); dialog.showModal(); });
-        });
-        dialog.querySelector('[data-close-contact]').addEventListener('click', function () { dialog.close(); });
-        dialog.addEventListener('click', function (e) {
-          var r = dialog.getBoundingClientRect();
-          if (e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom) dialog.close();
-        });
-
-        // Copy email
-        var copyBtn = document.getElementById('copy-email');
-        copyBtn.addEventListener('click', function () {
-          navigator.clipboard.writeText('daniel.lahav@biu.ac.il').then(function () {
-            var old = copyBtn.textContent;
-            copyBtn.textContent = 'Copied ✓';
-            setTimeout(function () { copyBtn.textContent = old; }, 1600);
-          });
-        });
-
-        // Request-access dialog
-        var reqDialog = document.getElementById('request-dialog');
-        var reqItem = document.getElementById('request-item');
-        var currentRequest = '';
-        document.querySelectorAll('[data-request]').forEach(function (btn) {
-          btn.addEventListener('click', function () {
-            currentRequest = btn.getAttribute('data-request');
-            reqItem.textContent = currentRequest;
-            reqDialog.showModal();
-          });
-        });
-        reqDialog.querySelector('[data-close-request]').addEventListener('click', function () { reqDialog.close(); });
-        reqDialog.addEventListener('click', function (e) {
-          var r = reqDialog.getBoundingClientRect();
-          if (e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom) reqDialog.close();
-        });
-        function sendRequestEmail() {
-          var name = document.getElementById('req-name').value.trim();
-          var aff = document.getElementById('req-affiliation').value.trim();
-          var msg = document.getElementById('req-message').value.trim();
-          var lines = ['Hello Daniel,', '', 'I would like to request access to: ' + currentRequest + '.'];
-          if (name) lines.push('', 'Name: ' + name);
-          if (aff) lines.push('Affiliation: ' + aff);
-          if (msg) lines.push('', msg);
-          lines.push('', 'Thank you.');
-          window.location.href = 'mailto:daniel.lahav@biu.ac.il'
-            + '?subject=' + encodeURIComponent('Access request: ' + currentRequest)
-            + '&body=' + encodeURIComponent(lines.join('\n'));
-        }
-        document.getElementById('request-send').addEventListener('click', sendRequestEmail);
-        document.getElementById('request-form').addEventListener('submit', function (e) {
-          e.preventDefault();
-          sendRequestEmail();
-        });
-        var reqCopy = document.getElementById('request-copy');
-        reqCopy.addEventListener('click', function () {
-          navigator.clipboard.writeText('daniel.lahav@biu.ac.il').then(function () {
-            var old = reqCopy.textContent;
-            reqCopy.textContent = 'Copied ✓';
-            setTimeout(function () { reqCopy.textContent = old; }, 1600);
-          });
-        });
-
-        // BibTeX copy
-        var BIB = {
-          vizel2025: '@article{vizel2025magnetic,\n  title={Magnetic Source Detection Using an Array of Planar Hall Effect Sensors and Machine Learning Algorithms},\n  author={Vizel, Miki and Alimi, Roger and Lahav, Daniel and Schultz, Moty and Amrusi, Shai and Grosz, Asaf and Klein, Lior},\n  journal={Applied Sciences},\n  volume={15},\n  number={2},\n  pages={964},\n  year={2025},\n  publisher={MDPI},\n  doi={10.3390/app15020964}\n}',
-          lahav2024: '@article{lahav2024planar,\n  title={Planar Hall Effect Magnetic Sensors with Extended Field Range},\n  author={Lahav, Daniel and Schultz, Moty and Amrusi, Shai and Grosz, Asaf and Klein, Lior},\n  journal={Sensors},\n  volume={24},\n  number={13},\n  pages={4384},\n  year={2024},\n  publisher={MDPI},\n  doi={10.3390/s24134384}\n}',
-          nhalil2023: '@article{nhalil2023flexible,\n  title={Flexible planar Hall effect sensor with sub-200 pT resolution},\n  author={Nhalil, Hariharan and Lahav, Daniel and Schultz, Moty and Amrusi, Shai and Grosz, Asaf and Klein, Lior},\n  journal={Applied Physics Letters},\n  volume={123},\n  number={2},\n  pages={024102},\n  year={2023},\n  doi={10.1063/5.0156588}\n}'
-        };
-        document.querySelectorAll('.bibtex-btn').forEach(function (btn) {
-          btn.addEventListener('click', function () {
-            navigator.clipboard.writeText(BIB[btn.getAttribute('data-bibtex')]).then(function () {
-              btn.classList.add('copied');
-              var old = btn.textContent;
-              btn.textContent = 'Copied ✓';
-              setTimeout(function () { btn.classList.remove('copied'); btn.textContent = old; }, 1600);
-            });
-          });
-        });
-      })();
-    </script>
-  </body>
+    </div>
+  </dialog>
+</div>
+</body>
 </html>
