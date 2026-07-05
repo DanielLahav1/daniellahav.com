@@ -6,6 +6,11 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
+    <loc>https://daniellahav.com/profile.html</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
     <loc>https://daniellahav.com/research.html</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
@@ -14,5 +19,20 @@
     <loc>https://daniellahav.com/teaching.html</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>yearly</changefreq>
+  </url>
+  <url>
+    <loc>https://daniellahav.com/publications.html</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://daniellahav.com/experience.html</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>yearly</changefreq>
+  </url>
+  <url>
+    <loc>https://daniellahav.com/conferences.html</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>monthly</changefreq>
   </url>
 </urlset>
