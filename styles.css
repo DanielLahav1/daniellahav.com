@@ -409,6 +409,15 @@ body.menu-open { overflow: hidden; }
 .work-card { background: var(--white); border: 1px solid var(--line); border-radius: var(--radius-surface); padding: 18px 18px 22px; display: flex; flex-direction: column; gap: 12px; }
 .work-card h3 { font-family: var(--font-display); font-weight: 500; font-size: 22px; line-height: 1.25; margin: 0; }
 .work-card p { font-size: 14.5px; color: var(--text-body); line-height: 1.6; margin: 0; }
+.work-fig { width: 100%; height: 190px; object-fit: cover; border-radius: 8px; display: block; background: var(--cream-soft); }
+.work-fig.contain { object-fit: contain; background: var(--white); }
+.feature-card .work-fig { height: 200px; margin-bottom: 6px; }
+.feature-fig { width: 100%; border-radius: 10px; display: block; }
+.lab-strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 44px; }
+.lab-strip figure { margin: 0; }
+.lab-strip img { width: 100%; height: 230px; object-fit: cover; border-radius: 10px; display: block; }
+.lab-strip figcaption { font-size: 13px; color: var(--text-muted); margin-top: 8px; line-height: 1.5; }
+@media (max-width: 760px) { .lab-strip { grid-template-columns: 1fr; } .lab-strip img { height: 200px; } }
 .work-meta { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
 .status-pill { font-size: 11px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--text-muted); border: 1px solid var(--line); padding: 3px 10px; border-radius: 999px; }
 .status-pill.gold { background: var(--primary); color: var(--on-primary); border-color: var(--primary); }
