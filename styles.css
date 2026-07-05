@@ -412,7 +412,7 @@ body.menu-open { overflow: hidden; }
 .work-fig { width: 100%; height: 190px; object-fit: cover; border-radius: 8px; display: block; background: var(--cream-soft); }
 .work-fig.contain { object-fit: contain; background: var(--white); }
 .feature-card .work-fig { height: 200px; margin-bottom: 6px; }
-.feature-fig { width: 100%; border-radius: 10px; display: block; }
+.feature-fig { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 10px; display: block; }
 .lab-strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 44px; }
 .lab-strip figure { margin: 0; }
 .lab-strip img { width: 100%; height: 230px; object-fit: cover; border-radius: 10px; display: block; }
