@@ -213,16 +213,18 @@ body.menu-open { overflow: hidden; }
 /* ---------- Profile ---------- */
 .profile-grid {
   display: grid; grid-template-columns: 1.2fr .8fr;
-  gap: 56px; margin-top: 40px; align-items: start;
+  gap: 56px; margin-top: 40px; align-items: stretch;
 }
 .prose .serif-lead {
   font-family: var(--font-serif); font-size: 21px; line-height: 1.55;
   color: var(--text); margin: 0 0 18px;
 }
 .prose p { font-size: 16px; color: var(--text-body); margin: 0 0 14px; max-width: 62ch; }
+.prose p:last-child { margin-bottom: 0; } /* facts card bottom aligns with the last text line */
 .facts-card {
   background: var(--navy); border-radius: var(--radius-surface);
   padding: 28px 30px;
+  display: flex; flex-direction: column; justify-content: space-between;
 }
 .facts-card .fact + .fact { margin-top: 22px; padding-top: 22px; border-top: 1px solid var(--navy-line); }
 .facts-card .fact .overline { color: var(--gold-soft); }
@@ -482,3 +484,12 @@ body.menu-open { overflow: hidden; }
 /* ============ 404 ============ */
 .error-page { min-height: 70vh; display: grid; place-items: center; text-align: center; padding: 64px 24px; }
 .error-page .num { font-family: var(--font-display); font-weight: 500; font-size: 96px; color: var(--primary-strong); letter-spacing: -0.02em; line-height: 1; }
+
+/* cards: pin links to the frame bottom */
+.feature-card { display: flex; flex-direction: column; }
+.feature-card .doi { margin-top: auto; padding-top: 14px; }
+/* press coverage row under doi/bibtex */
+.pub-press { margin-top: 10px; font-size: 13px; color: var(--on-inverse-soft, #9ba8b7); display: flex; flex-wrap: wrap; gap: 6px 16px; align-items: baseline; }
+.pub-press .press-label { font-weight: 600; text-transform: uppercase; letter-spacing: .08em; font-size: 11px; }
+.pub-press a { color: var(--gold-soft); }
+.pub-press a:hover { color: var(--gold-bright); }
