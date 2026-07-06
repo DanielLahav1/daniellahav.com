@@ -37,6 +37,8 @@
   --on-primary: #201603;
 
   --success-on-inverse: #5db872;
+  --on-inverse: #f1ead9;        /* text on navy pacing surfaces */
+  --on-inverse-soft: #9ba8b7;
   --contrast-bg: var(--ink);
   --contrast-fg: var(--cream);
   --outline-card-bg: var(--bg);
