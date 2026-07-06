@@ -121,6 +121,9 @@ a { color: var(--primary-strong); }
   border: 1px solid var(--line); 
 }
 .btn-secondary:hover { background: var(--cream-strong); }
+/* secondary button on navy surfaces: hover inverts to light fill + navy text */
+.btn-on-navy { border-color: var(--navy-line); color: var(--on-inverse); background: transparent; }
+.btn-on-navy:hover { background: var(--on-inverse); color: var(--navy); border-color: var(--on-inverse); }
 .btn-contrast { background: var(--contrast-bg); color: var(--contrast-fg); }
 .btn-contrast:hover { opacity: .92; }
 
