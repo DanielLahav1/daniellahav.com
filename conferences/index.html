@@ -41,11 +41,11 @@
         <a href="/publications/">Publications</a>
         <a href="/education/">Education</a>
         <a href="/experience/">Experience</a>
-        <a href="/conferences/" class="active">Conferences</a>
+        <a href="/conferences/" class="active" aria-current="page">Conferences</a>
       </nav>
       <div class="nav-actions">
         <button class="btn-secondary" type="button" data-action="open-contact">Contact</button>
-        <button class="menu-toggle" type="button" aria-label="Open menu" data-action="open-menu">
+        <button class="menu-toggle" type="button" aria-label="Open menu" data-action="open-menu" aria-controls="menu-sheet" aria-expanded="false">
           <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M2 4.5h14M2 9h14M2 13.5h14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path></svg>
         </button>
       </div>
@@ -63,7 +63,7 @@
       <a href="/publications/">Publications</a>
       <a href="/education/">Education</a>
       <a href="/experience/">Experience</a>
-      <a href="/conferences/">Conferences</a>
+      <a href="/conferences/" aria-current="page">Conferences</a>
     </nav>
     <div class="sheet-contact">
       <button class="btn-primary" type="button" data-action="open-contact-from-menu">Contact</button>
@@ -73,8 +73,8 @@
   <main id="main">
     <section class="page-head" data-screen-label="Page head">
       <div class="wrap">
-        <span class="overline">Conferences & service</span>
-        <h1>Talks, posters, and service.</h1>
+        <span class="overline">Conferences &amp; service</span>
+        <h1>Talks, posters, teaching, and service.</h1>
         <p class="lede">The conference record from the CV, with slides and posters available on the research page.</p>
       </div>
     </section>
@@ -85,7 +85,7 @@
         <div class="outline-grid">
           <div class="outline-card">
             <div class="fig-slot" style="height:170px;margin-bottom:16px;"><span>Conference photo &middot; coming soon</span></div>
-            <h3>Conference talks</h3>
+            <h2>Conference talks</h2>
             <ul class="plain-list">
               <li><span class="what">Multifunctional High-Resolution Flexible Elliptical Planar Hall Effect Sensors for Magnetometry and Strain Sensing</span> &middot; <span class="where">EMSA 2026 &middot; MMM 2026 (accepted)</span></li>
               <li><span class="what">Enhanced Magnetic Resolution in Elliptical Planar Hall Effect Sensors via Non-Collinear Anisotropy Engineering</span> &middot; <span class="where">MMM 2026 (accepted)</span></li>
@@ -95,7 +95,7 @@
           </div>
           <div class="outline-card">
             <div class="fig-slot" style="height:170px;margin-bottom:16px;"><span>Poster-session photo &middot; coming soon</span></div>
-            <h3>Conference posters</h3>
+            <h2>Conference posters</h2>
             <ul class="plain-list">
               <li><span class="what">Enhanced Magnetic Resolution in Elliptical Planar Hall Effect Sensors via Non-Collinear Anisotropy Engineering</span> &middot; <span class="where">EMSA 2026</span></li>
               <li><span class="what">Expanding the Field Range of PHE Sensors for Increased Industrial Applicability</span> &middot; <span class="where">MMM-Intermag 2025 &middot; iSIM 2025 &middot; BINA 2025</span></li>
@@ -104,15 +104,15 @@
             </ul>
           </div>
           <div class="outline-card">
-            <h3>Teaching &amp; service</h3>
+            <h2>Teaching &amp; service</h2>
             <ul class="plain-list">
-              <li><span class="what">Physics lab instruction</span> &middot; <span class="where">four courses + tutoring, Dept. of Physics</span></li>
+              <li><span class="what"><a href="/teaching/">Physics lab instruction</a></span> &middot; <span class="where">four courses + tutoring, Dept. of Physics</span></li>
               <li><span class="what">Cleanroom user training</span> &middot; <span class="where">Nano-Fabrication Center, BINA</span></li>
               <li><span class="what">Student representative, Physics Department</span> &middot; <span class="where">BIU Student Association, 2023 &ndash; Present</span></li>
             </ul>
           </div>
           <div class="outline-card">
-            <h3>Profiles</h3>
+            <h2>Profiles</h2>
             <ul class="plain-list">
               <li><a href="https://scholar.google.com/citations?user=XBujEiwAAAAJ">Google Scholar</a></li>
               <li><a href="https://orcid.org/0009-0005-8692-7951">ORCID &middot; 0009-0005-8692-7951</a></li>
@@ -133,6 +133,7 @@
           <a href="/assets/cv/daniel-lahav-cv.pdf">CV (PDF)</a>
           <a href="https://scholar.google.com/citations?user=XBujEiwAAAAJ">Google Scholar</a>
           <a href="https://orcid.org/0009-0005-8692-7951">ORCID</a>
+          <a href="https://www.semanticscholar.org/author/2222600041">Semantic Scholar</a>
           <a href="https://sites.biu.ac.il/en/klein-lab-spintronics">Klein Lab</a>
         </div>
       </div>
@@ -143,11 +144,11 @@
     </div>
   </footer>
 
-  <dialog class="contact-dialog" id="contact-dialog" data-screen-label="Contact dialog">
+  <dialog class="contact-dialog" id="contact-dialog" aria-labelledby="contact-title" data-screen-label="Contact dialog">
     <div class="dialog-inner">
       <button class="dialog-close" type="button" aria-label="Close" data-action="close-contact">✕</button>
       <span class="overline">Contact</span>
-      <h3>Get in touch</h3>
+      <h3 id="contact-title">Get in touch</h3>
       <p class="sub">For research, collaborations, or questions about my work.</p>
       <div class="contact-actions">
         <a class="btn-primary" href="mailto:daniel.lahav@biu.ac.il">Email · daniel.lahav@biu.ac.il</a>
@@ -162,7 +163,7 @@
     </div>
   </dialog>
 
-  <dialog class="contact-dialog" id="request-dialog" data-screen-label="Request dialog">
+  <dialog class="contact-dialog" id="request-dialog" aria-labelledby="request-title" data-screen-label="Request dialog">
     <div class="dialog-inner">
       <button class="dialog-close" type="button" aria-label="Close" data-action="close-request">✕</button>
       <span class="overline">Request access</span>

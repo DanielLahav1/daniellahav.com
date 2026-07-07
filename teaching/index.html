@@ -45,7 +45,7 @@
       </nav>
       <div class="nav-actions">
         <button class="btn-secondary" type="button" data-action="open-contact">Contact</button>
-        <button class="menu-toggle" type="button" aria-label="Open menu" data-action="open-menu">
+        <button class="menu-toggle" type="button" aria-label="Open menu" data-action="open-menu" aria-controls="menu-sheet" aria-expanded="false">
           <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M2 4.5h14M2 9h14M2 13.5h14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path></svg>
         </button>
       </div>
@@ -75,11 +75,14 @@
       <div class="wrap">
         <span class="overline">Teaching</span>
         <h1>Physics, taught hands-on.</h1>
-        <p class="lede">Since 2022 I have taught the lab track of the Department of Physics at Bar-Ilan: four laboratory courses and a tutorial, alongside one-on-one cleanroom training at the Nano-Fabrication Center.</p>
+        <p class="lede">Since 2022 I have taught in the lab track of the Department of Physics at Bar-Ilan: four laboratory courses and a tutorial, alongside one-on-one cleanroom training at the Nano-Fabrication Center.</p>
         <div class="record-stats" style="max-width:760px;">
           <div class="stat"><div class="num">4</div><div class="cap">Laboratory courses</div></div>
           <div class="stat"><div class="num">1</div><div class="cap">Tutorial course</div></div>
           <div class="stat"><div class="num">2022</div><div class="cap">Teaching since</div></div>
+        </div>
+        <div style="margin-top:24px;display:flex;gap:12px;flex-wrap:wrap;">
+          <a class="btn-secondary" href="/experience/">Experience &amp; capabilities →</a>
         </div>
       </div>
     </section>
@@ -122,7 +125,7 @@
             <p>Weekly problem sessions that bridge the lecture theory to what happens on the bench in the electronics lab.</p>
           </article>
           <article class="course-card" style="background:transparent;border-style:dashed;">
-            <span class="course-code">·</span>
+            <span class="course-code">&nbsp;</span>
             <h3>Teaching materials</h3>
             <span class="course-role">Lab guides · problem sets · checklists</span>
             <p>Guides and materials I have written for these courses are available to instructors on request.</p>
@@ -180,6 +183,7 @@
           <a href="/assets/cv/daniel-lahav-cv.pdf">CV (PDF)</a>
           <a href="https://scholar.google.com/citations?user=XBujEiwAAAAJ">Google Scholar</a>
           <a href="https://orcid.org/0009-0005-8692-7951">ORCID</a>
+          <a href="https://www.semanticscholar.org/author/2222600041">Semantic Scholar</a>
           <a href="https://sites.biu.ac.il/en/klein-lab-spintronics">Klein Lab</a>
         </div>
       </div>
@@ -190,11 +194,11 @@
     </div>
   </footer>
 
-  <dialog class="contact-dialog" id="contact-dialog" data-screen-label="Contact dialog">
+  <dialog class="contact-dialog" id="contact-dialog" aria-labelledby="contact-title" data-screen-label="Contact dialog">
     <div class="dialog-inner">
       <button class="dialog-close" type="button" aria-label="Close" data-action="close-contact">✕</button>
       <span class="overline">Contact</span>
-      <h3>Get in touch</h3>
+      <h3 id="contact-title">Get in touch</h3>
       <p class="sub">For research, collaborations, or questions about my work.</p>
       <div class="contact-actions">
         <a class="btn-primary" href="mailto:daniel.lahav@biu.ac.il">Email · daniel.lahav@biu.ac.il</a>
@@ -209,7 +213,7 @@
     </div>
   </dialog>
 
-  <dialog class="contact-dialog" id="request-dialog" data-screen-label="Request dialog">
+  <dialog class="contact-dialog" id="request-dialog" aria-labelledby="request-title" data-screen-label="Request dialog">
     <div class="dialog-inner">
       <button class="dialog-close" type="button" aria-label="Close" data-action="close-request">✕</button>
       <span class="overline">Request access</span>

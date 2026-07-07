@@ -2,16 +2,16 @@
    Site · Personal V2 (live) — verbatim stylesheet of daniellahav.com
    Ground truth fetched 2026-07-04. Do not "improve"; the live site
    evolved ahead of the design system and this mirrors it exactly.
-   Fonts: real Palatino/Cambria load via ../../foundations/tokens/fonts.css
-   locally; the public web serves Cormorant Garamond / Spectral.
+   Fonts: self-hosted Cormorant Garamond / Spectral / Inter load via
+   /assets/fonts/fonts.css; system serifs are fallbacks only.
    ============================================================ */
 :root {
   --gold: #c29a4a;
   --gold-strong: #a07f34;
   --gold-soft: #e4d2a8;
+  --gold-bright: #f0e3c2;
   --coral: #cc785c;
   --navy: #0f1e3a;
-  --navy-deep: #0b1929;
   --navy-soft: #16274a;
   --navy-line: #24324f;
   --cream: #faf9f5;
@@ -19,10 +19,7 @@
   --cream-card: #efe9de;
   --cream-strong: #e8e0d2;
   --ink: #141413;
-  --ink-2: #252523;
   --ink-3: #3d3d3a;
-  --slate: #5c6470;
-  --slate-soft: #7f8b97;
   --muted: #6c6a64;
   --hairline: #e6dfd8;
   --white: #ffffff;
@@ -45,8 +42,8 @@
   --nav-bg: color-mix(in srgb, var(--cream) 88%, transparent);
   --scrim: color-mix(in srgb, var(--navy) 55%, transparent);
 
-  --font-display: 'Palatino', 'Palatino Linotype', 'Book Antiqua', 'Cormorant Garamond', Georgia, serif;
-  --font-serif: 'Cambria', 'Spectral', Georgia, 'Times New Roman', serif;
+  --font-display: 'Cormorant Garamond', 'Palatino', 'Palatino Linotype', 'Book Antiqua', Georgia, serif;
+  --font-serif: 'Spectral', 'Cambria', Georgia, 'Times New Roman', serif;
   --font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
 
   --radius-control: 8px;
@@ -180,6 +177,7 @@ body.menu-open { overflow: hidden; }
 .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
 
 .portrait-card {
+  margin: 0;
   background: var(--navy);
   border: 1px solid var(--navy-line);
   border-radius: 16px;
@@ -187,6 +185,8 @@ body.menu-open { overflow: hidden; }
   box-shadow: var(--shadow-md);
 }
 .portrait-card img { width: 100%; height: 370px; object-fit: cover; object-position: 50% 0%; border-radius: 8px; }
+/* desktop two-column hero: card bottom lands on the button row baseline */
+@media (min-width: 961px) { .portrait-card img { height: 324px; } }
 
 /* ---------- Stats ---------- */
 .record-stats {
@@ -205,6 +205,7 @@ body.menu-open { overflow: hidden; }
 /* ---------- Bands ---------- */
 .band { padding: 84px 0; }
 .band-surface { background: var(--cream-soft); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.band-surface + .band-surface { border-top: 0; } /* collapse doubled hairline between adjacent surface bands */
 .band-navy { background: var(--navy); }
 .section-head { max-width: 720px; }
 .section-head h2 {
@@ -290,7 +291,11 @@ body.menu-open { overflow: hidden; }
 
 /* ---------- Timelines ---------- */
 .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: start; }
-#conferences .two-col { align-items: stretch; } /* equal-height outline cards per row */
+.two-col .section-head h2 { min-height: 2.24em; } /* reserve 2 lines at line-height 1.12 so paired column timelines start on the same row */
+/* teaching cleanroom band: pin the chip row to the facts-card bottom edge */
+.band-navy .two-col { align-items: stretch; }
+.band-navy .two-col > div:first-child { display: flex; flex-direction: column; }
+.band-navy .two-col .chip-row { margin-top: auto; padding-top: 22px; }
 .nowrap { white-space: nowrap; }
 .timeline { list-style: none; margin: 36px 0 0; padding: 0; position: relative; }
 .timeline li { position: relative; padding: 0 0 30px 30px; }
@@ -316,7 +321,7 @@ body.menu-open { overflow: hidden; }
   border: 1px solid var(--line); border-radius: var(--radius-surface);
   padding: 30px 32px;
 }
-.outline-card h3 {
+.outline-card h2, .outline-card h3 {
   font-family: var(--font-display); font-weight: 500; font-size: 22px; margin: 0 0 16px;
 }
 .plain-list { list-style: none; margin: 0; padding: 0; }
@@ -397,14 +402,6 @@ body.menu-open { overflow: hidden; }
 .dialog-links a:hover { text-decoration: underline; }
 
 /* ---------- Work & resources ---------- */
-.sub-head { margin-top: 68px; max-width: 760px; }
-.sub-head h3 { font-family: var(--font-display); font-weight: 500; font-size: 27px; letter-spacing: -0.01em; line-height: 1.25; margin: 10px 0 0; }
-.resource-list { margin-top: 24px; }
-.resource-row { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 17px 0; border-top: 1px solid var(--line); }
-.resource-row:last-child { border-bottom: 1px solid var(--line); }
-.r-title { font-size: 16px; font-weight: 600; color: var(--text); }
-.r-note { font-size: 13.5px; color: var(--text-muted); margin-top: 3px; line-height: 1.5; }
-.btn-request { padding: 8px 16px; font-size: 13px; flex: none; }
 .card-request { margin-top: 6px; background: none; border: 0; padding: 0; text-align: left; cursor: pointer; font-family: var(--font-sans); font-size: 13.5px; font-weight: 600; color: var(--primary-strong); }
 .card-request:hover { text-decoration: underline; text-underline-offset: 3px; }
 
@@ -419,7 +416,7 @@ body.menu-open { overflow: hidden; }
 .work-fig { width: 100%; height: 190px; object-fit: cover; border-radius: 8px; display: block; background: var(--cream-soft); }
 .work-fig.contain { object-fit: contain; background: var(--white); }
 .feature-card .work-fig { height: 200px; margin-bottom: 6px; }
-.feature-fig { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 10px; display: block; }
+.feature-fig { width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 10px; display: block; }
 .lab-strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 44px; }
 .lab-strip figure { margin: 0; }
 .lab-strip img { width: 100%; height: 230px; object-fit: cover; border-radius: 10px; display: block; }
@@ -450,7 +447,9 @@ body.menu-open { overflow: hidden; }
 /* ---------- Mobile ---------- */
 @media (max-width: 960px) {
   .hero-grid { grid-template-columns: 1fr; gap: 44px; }
+  .hero-grid > figure { max-width: 370px; margin: 0 auto; }
   .profile-grid, .two-col, .outline-grid { grid-template-columns: 1fr; gap: 40px; }
+  .two-col .section-head h2 { min-height: 0; } /* no reserved 2nd line once columns stack */
   .card-grid { grid-template-columns: 1fr; }
   .work-grid { grid-template-columns: 1fr; }
   .course-grid { grid-template-columns: 1fr; }
@@ -459,7 +458,6 @@ body.menu-open { overflow: hidden; }
 }
 @media (max-width: 1020px) {
   .nav-links { display: none; }
-  .nav-actions .btn-primary { display: none; }
   .menu-toggle { display: inline-flex; }
 }
 @media (max-width: 768px) {
@@ -473,11 +471,12 @@ body.menu-open { overflow: hidden; }
   .lede { margin: 0 auto; }
   .hero-actions { justify-content: center; }
   .record-stats { grid-template-columns: repeat(3, 1fr); gap: 0; margin-top: 40px; }
-  .record-stats .stat { padding: 16px 10px 4px 12px; }
+  .record-stats .stat { padding: 16px 11px 4px; }
   .record-stats .num { font-size: 30px; }
   .record-stats .cap { font-size: 11.5px; }
   .band { padding: 56px 0; }
-  .resource-row { flex-direction: column; align-items: flex-start; gap: 12px; }
+  .pub-row { grid-template-columns: 48px 1fr; gap: 16px; }
+  .pub-num { font-size: 32px; }
   .callout { padding: 36px 28px; }
   .callout h2 { font-size: 30px; }
 }
@@ -488,7 +487,7 @@ body.menu-open { overflow: hidden; }
 
 /* ============ 404 ============ */
 .error-page { min-height: 70vh; display: grid; place-items: center; text-align: center; padding: 64px 24px; }
-.error-page .num { font-family: var(--font-display); font-weight: 500; font-size: 96px; color: var(--primary-strong); letter-spacing: -0.02em; line-height: 1; }
+.error-page .num { font-family: var(--font-display); font-weight: 500; font-size: 96px; color: var(--primary-strong); letter-spacing: -0.02em; line-height: 1; margin: 0; }
 
 /* cards: pin links to the frame bottom */
 .feature-card { display: flex; flex-direction: column; }
@@ -498,3 +497,10 @@ body.menu-open { overflow: hidden; }
 .pub-press .press-label { font-weight: 600; text-transform: uppercase; letter-spacing: .08em; font-size: 11px; }
 .pub-press a { color: var(--gold-soft); }
 .pub-press a:hover { color: var(--gold-bright); }
+
+/* ---------- Print ---------- */
+@media print {
+  .top-nav, .menu-sheet, dialog, .callout button, .hero-actions, .bibtex-btn, .card-request { display: none !important; }
+  .band-navy, .site-footer, .facts-card, .feature-work, .portrait-card { background: #fff !important; border-color: #ccc !important; box-shadow: none !important; }
+  .band-navy *, .site-footer *, .facts-card *, .feature-work * { color: #000 !important; }
+}

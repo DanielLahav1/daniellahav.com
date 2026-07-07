@@ -45,7 +45,7 @@
 <link rel="preload" href="/assets/fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/spectral-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/fonts/fonts.css">
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="/styles.css">
 <script src="site.js" defer></script>
 </head>
 <body>
@@ -59,7 +59,7 @@
         <span class="name">Daniel Lahav</span>
       </a>
       <nav class="nav-links" aria-label="Primary">
-        <a href="index.html" class="active">Profile</a>
+        <a href="/" class="active" aria-current="page">Profile</a>
         <a href="/research/">Research</a>
         <a href="/publications/">Publications</a>
         <a href="/education/">Education</a>
@@ -81,7 +81,7 @@
       <button class="menu-toggle" type="button" aria-label="Close menu" data-action="close-menu" style="display:inline-flex;">✕</button>
     </div>
     <nav aria-label="Mobile">
-      <a href="index.html">Profile</a>
+      <a href="/" aria-current="page">Profile</a>
       <a href="/research/">Research</a>
       <a href="/publications/">Publications</a>
       <a href="/education/">Education</a>
@@ -101,18 +101,17 @@
             <span class="overline">Ph.D. Candidate · Experimental Condensed Matter &amp; Spintronics</span>
             <h1>Daniel Lahav</h1>
             <div class="gold-rule"></div>
-            <p class="lede">I study how mechanical strain reshapes magnetism in thin films, and use that physics to build flexible planar Hall effect sensors with sub-200&nbsp;pT resolution at the Klein Group, Bar-Ilan University.</p>
+            <p class="lede">In the Klein Group at Bar-Ilan University, I study how mechanical strain reshapes magnetism in thin films, and I use that physics to build flexible planar Hall effect sensors with sub-200&nbsp;pT resolution.</p>
             <div class="hero-actions">
               <button class="btn-primary" type="button" data-action="open-contact">Get in touch</button>
-              <a class="btn-secondary" href="https://scholar.google.com/citations?user=XBujEiwAAAAJ">Google Scholar</a>
-              <a class="btn-secondary" href="https://orcid.org/0009-0005-8692-7951">ORCID</a>
               <a class="btn-secondary" href="/assets/cv/daniel-lahav-cv.pdf">Download CV</a>
+              <a class="btn-secondary" href="https://scholar.google.com/citations?user=XBujEiwAAAAJ">Google Scholar</a>
             </div>
           </div>
-          <figure class="portrait-card" style="margin:0;">
+          <figure class="portrait-card">
             <img src="assets/daniel-lahav.jpg"
                  srcset="assets/daniel-lahav-sm.jpg 439w, assets/daniel-lahav.jpg 879w"
-                 sizes="(max-width: 900px) 216px, 370px"
+                 sizes="(max-width: 768px) 216px, 370px"
                  alt="Portrait of Daniel Lahav" width="879" height="1100" fetchpriority="high">
           </figure>
         </div>
@@ -134,7 +133,7 @@
           <div class="prose">
             <p class="serif-lead">I am a Ph.D. candidate in the <a href="https://sites.biu.ac.il/en/klein-lab-spintronics">Klein Group</a> at Bar-Ilan University. My field is flexible spintronics: what happens to magnetism in thin films when you bend them, and how to turn that physics into devices.</p>
             <p>Strain is usually treated as a hazard that flexible electronics must survive. In my work it is also a knob. I grow Ta/permalloy heterostructures and elliptical planar Hall effect sensors on flexible substrates such as Kapton, bend them on custom 3D-printed stages, and track how strain reshapes magnetic anisotropy, magnetotransport, spin-orbit torques, film morphology, and noise.</p>
-            <p>The approach works. Our flexible sensors resolve magnetic fields below 200 pT/&radic;Hz flat and below 400 pT/&radic;Hz bent to a 10 mm radius, the best resolution reported for a flexible magnetic sensor. Bending can flip the magnetization easy axis and more than double the anisotropy field, and the change is reversible. The same physics lets one device read magnetic field and strain at once.</p>
+            <p>The approach works. Our flexible sensors resolve magnetic fields below 200 pT/&radic;Hz flat and below 400 pT/&radic;Hz bent to a 10 mm radius, which at publication was the best resolution reported for a flexible magnetic sensor. Bending can flip the magnetization easy axis and more than double the anisotropy field, and the change is reversible. The same physics lets one device read magnetic field and strain at once.</p>
             <p>Alongside research, I operate the Nano-Fabrication Center at BINA, supporting cleanroom work like sputtering, lithography, and thin-film deposition for research groups across the institute.</p>
           </div>
           <aside class="facts-card">
@@ -171,7 +170,7 @@
           </article>
           <article class="feature-card">
             <img class="work-fig" src="assets/research/flexible-hero.jpg" alt="Flexible elliptical planar Hall effect sensor on a bent translucent substrate" loading="lazy">
-            <span class="overline">PhD thesis · Klein Lab</span>
+            <span class="overline">PhD thesis · In progress</span>
             <h3>Flexible spintronics under strain</h3>
             <p>Bending a sensor to a 10 mm radius flips its magnetization easy axis and tunes the effective anisotropy field from 7.2 to 17.8 Oe, reversibly. The same physics lets one device read magnetic field and strain at once.</p>
             <a class="doi" href="/research/">More on the research page</a>
@@ -195,7 +194,7 @@
       <div class="wrap">
         <div class="section-head">
           <span class="overline">Publications</span>
-          <h2>Peer-reviewed publications</h2>
+          <h2>The peer-reviewed record.</h2>
         </div>
         <div class="pubs">
           <div class="pub-row">
@@ -241,7 +240,7 @@
               </div>
             </div>
           </div>
-          <p class="pub-footnote">More manuscripts are under review, at Measurement and Array.</p>
+          <p class="pub-footnote">One more manuscript is in press at Measurement, and another is under review at Array.</p>
           <div style="margin-top:32px;">
             <a class="btn-secondary btn-on-navy" href="/publications/">All publications →</a>
           </div>
@@ -265,8 +264,8 @@
               </li>
               <li>
                 <div class="t-when">2022 &ndash; 2024</div>
-                <div class="t-what">MSc in Physics, Magna Cum Laude</div>
-                <div class="t-note">Thesis: Flexible Planar Hall Effect Sensors Under Strain.</div>
+                <div class="t-what">MSc in Physics, Bar-Ilan University</div>
+                <div class="t-note">Magna cum laude &middot; Thesis: Flexible Planar Hall Effect Sensors Under Strain.</div>
               </li>
               <li>
                 <div class="t-when">2019 &ndash; 2022</div>
@@ -283,12 +282,12 @@
               <li>
                 <div class="t-when">2026</div>
                 <div class="t-what">KLA Scholarship for Outstanding Students</div>
-                <div class="t-note">Awarded for a lecture at the KLA-BINA Outstanding Students Seminar, BINA.</div>
+                <div class="t-note">Awarded for a lecture at the KLA-BINA Outstanding Students Seminar.</div>
               </li>
               <li>
                 <div class="t-when">2024 &ndash; 2026</div>
-                <div class="t-what">Excel@BINA Scholarship for Outstanding Students, twice</div>
-                <div class="t-note">Institute of Nanotechnology and Advanced Materials, 2024&ndash;2025 and 2025&ndash;2026.</div>
+                <div class="t-what">Excel@BINA Scholarship for Outstanding Students</div>
+                <div class="t-note">Awarded twice by the Institute of Nanotechnology and Advanced Materials, 2024&ndash;2025 and 2025&ndash;2026.</div>
               </li>
               <li>
                 <div class="t-when">2024 &ndash; 2025</div>
@@ -335,7 +334,7 @@
               <span class="overline">Capabilities</span>
               <h2>From cleanroom to measurement rig.</h2>
             </div>
-            <ul class="plain-list" style="margin-top:8px;">
+            <ul class="plain-list" style="margin-top:27px;">
               <li><span class="what">Nanofabrication</span> &middot; <span class="where">mask &amp; maskless lithography, wafer bonding, ion-beam and BesTec sputtering, dicing, ICP-RIE</span></li>
               <li><span class="what">Characterization</span> &middot; <span class="where">AFM, SEM, MOKE, magnetotransport, noise spectroscopy</span></li>
               <li><span class="what">Programming &amp; software</span> &middot; <span class="where">Python, MATLAB, C++, LabVIEW, COMSOL</span></li>
@@ -380,7 +379,7 @@
           <div class="outline-card">
             <h3>Teaching &amp; service</h3>
             <ul class="plain-list">
-              <li><span class="what">Physics lab instruction</span> &middot; <span class="where">four courses + tutoring, Dept. of Physics</span></li>
+              <li><span class="what"><a href="/teaching/">Physics lab instruction</a></span> &middot; <span class="where">four courses + tutoring, Dept. of Physics</span></li>
               <li><span class="what">Cleanroom user training</span> &middot; <span class="where">Nano-Fabrication Center, BINA</span></li>
               <li><span class="what">Student representative, Physics Department</span> &middot; <span class="where">BIU Student Association, 2023 &ndash; Present</span></li>
             </ul>
@@ -393,6 +392,9 @@
               <li><a href="https://www.semanticscholar.org/author/2222600041">Semantic Scholar</a></li>
             </ul>
           </div>
+        </div>
+        <div style="margin-top:36px;">
+          <a class="btn-secondary" href="/conferences/">Conferences &amp; service →</a>
         </div>
       </div>
     </section>

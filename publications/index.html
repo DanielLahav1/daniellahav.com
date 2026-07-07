@@ -38,14 +38,14 @@
       <nav class="nav-links" aria-label="Primary">
         <a href="/">Profile</a>
         <a href="/research/">Research</a>
-        <a href="/publications/" class="active">Publications</a>
+        <a href="/publications/" class="active" aria-current="page">Publications</a>
         <a href="/education/">Education</a>
         <a href="/experience/">Experience</a>
         <a href="/conferences/">Conferences</a>
       </nav>
       <div class="nav-actions">
         <button class="btn-secondary" type="button" data-action="open-contact">Contact</button>
-        <button class="menu-toggle" type="button" aria-label="Open menu" data-action="open-menu">
+        <button class="menu-toggle" type="button" aria-label="Open menu" data-action="open-menu" aria-controls="menu-sheet" aria-expanded="false">
           <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M2 4.5h14M2 9h14M2 13.5h14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path></svg>
         </button>
       </div>
@@ -60,7 +60,7 @@
     <nav aria-label="Mobile">
       <a href="/">Profile</a>
       <a href="/research/">Research</a>
-      <a href="/publications/">Publications</a>
+      <a href="/publications/" aria-current="page">Publications</a>
       <a href="/education/">Education</a>
       <a href="/experience/">Experience</a>
       <a href="/conferences/">Conferences</a>
@@ -82,12 +82,12 @@
     <div style="margin-top:56px;"></div>
     <section class="band band-navy" id="publications" data-screen-label="Publications">
       <div class="wrap">
-        <div class="pubs">
+        <div class="pubs" style="margin-top:0;">
           <div class="pub-row">
             <div class="pub-num">01</div>
             <div>
               <div class="pub-meta"><span class="pub-venue">Applied Sciences · 2025</span></div>
-              <h3 class="pub-title">Magnetic source detection using an array of planar Hall effect sensors and machine learning algorithms</h3>
+              <h2 class="pub-title">Magnetic source detection using an array of planar Hall effect sensors and machine learning algorithms</h2>
               <p class="pub-authors">M. Vizel, R. Alimi, <strong>D. Lahav</strong>, M. Schultz, S. Amrusi, A. Grosz, L. Klein</p>
               <div class="pub-links">
                 <a href="https://doi.org/10.3390/app15020964">doi:10.3390/app15020964</a>
@@ -99,7 +99,7 @@
             <div class="pub-num">02</div>
             <div>
               <div class="pub-meta"><span class="pub-venue">Sensors · 2024 · First author</span><span class="badge-gold">Editors’ Choice</span></div>
-              <h3 class="pub-title">Planar Hall effect magnetic sensors with extended field range</h3>
+              <h2 class="pub-title">Planar Hall effect magnetic sensors with extended field range</h2>
               <p class="pub-authors"><strong>D. Lahav</strong>, M. Schultz, S. Amrusi, A. Grosz, L. Klein</p>
               <div class="pub-links">
                 <a href="https://doi.org/10.3390/s24134384">doi:10.3390/s24134384</a>
@@ -111,7 +111,7 @@
             <div class="pub-num">03</div>
             <div>
               <div class="pub-meta"><span class="pub-venue">Applied Physics Letters · 2023</span></div>
-              <h3 class="pub-title">Flexible planar Hall effect sensor with sub-200 pT resolution</h3>
+              <h2 class="pub-title">Flexible planar Hall effect sensor with sub-200 pT resolution</h2>
               <p class="pub-authors">H. Nhalil, <strong>D. Lahav</strong>, M. Schultz, S. Amrusi, A. Grosz, L. Klein</p>
               <div class="pub-links">
                 <a href="https://doi.org/10.1063/5.0156588">doi:10.1063/5.0156588</a>
@@ -126,7 +126,26 @@
               </div>
             </div>
           </div>
-          <p class="pub-footnote">More manuscripts are under review, at Measurement and Array.</p>
+          <div class="pub-row">
+            <div class="pub-num">04</div>
+            <div>
+              <div class="pub-meta"><span class="pub-venue">Measurement · In press · First author</span></div>
+              <h2 class="pub-title">Enhanced magnetic resolution via non-collinear anisotropy</h2>
+              <div class="pub-links">
+                <button class="bibtex-btn" type="button" data-request="measurement">Request preprint</button>
+              </div>
+            </div>
+          </div>
+          <div class="pub-row">
+            <div class="pub-num">05</div>
+            <div>
+              <div class="pub-meta"><span class="pub-venue">Array · Under review</span></div>
+              <h2 class="pub-title">Physics-guided multi-view conditioning for super-resolution</h2>
+              <div class="pub-links">
+                <button class="bibtex-btn" type="button" data-request="array">Request preprint</button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -141,6 +160,7 @@
           <a href="/assets/cv/daniel-lahav-cv.pdf">CV (PDF)</a>
           <a href="https://scholar.google.com/citations?user=XBujEiwAAAAJ">Google Scholar</a>
           <a href="https://orcid.org/0009-0005-8692-7951">ORCID</a>
+          <a href="https://www.semanticscholar.org/author/2222600041">Semantic Scholar</a>
           <a href="https://sites.biu.ac.il/en/klein-lab-spintronics">Klein Lab</a>
         </div>
       </div>
@@ -151,11 +171,11 @@
     </div>
   </footer>
 
-  <dialog class="contact-dialog" id="contact-dialog" data-screen-label="Contact dialog">
+  <dialog class="contact-dialog" id="contact-dialog" aria-labelledby="contact-title" data-screen-label="Contact dialog">
     <div class="dialog-inner">
       <button class="dialog-close" type="button" aria-label="Close" data-action="close-contact">✕</button>
       <span class="overline">Contact</span>
-      <h3>Get in touch</h3>
+      <h3 id="contact-title">Get in touch</h3>
       <p class="sub">For research, collaborations, or questions about my work.</p>
       <div class="contact-actions">
         <a class="btn-primary" href="mailto:daniel.lahav@biu.ac.il">Email · daniel.lahav@biu.ac.il</a>
@@ -170,7 +190,7 @@
     </div>
   </dialog>
 
-  <dialog class="contact-dialog" id="request-dialog" data-screen-label="Request dialog">
+  <dialog class="contact-dialog" id="request-dialog" aria-labelledby="request-title" data-screen-label="Request dialog">
     <div class="dialog-inner">
       <button class="dialog-close" type="button" aria-label="Close" data-action="close-request">✕</button>
       <span class="overline">Request access</span>

@@ -6,12 +6,11 @@
 
   var REQUEST_ITEMS = {
     thesis: { short: 'PhD thesis chapters', full: 'PhD thesis chapters: Flexible spintronics under strain (in progress)' },
-    sensors2024: { short: 'Sensors 2024 author copy', full: 'Author copy: Planar Hall effect magnetic sensors with extended field range (Sensors, 2024)' },
     apl2023: { short: 'APL 2023 author copy', full: 'Author copy: Flexible planar Hall effect sensor with sub-200 pT resolution (Applied Physics Letters, 2023)' },
-    measurement: { short: 'Measurement preprint', full: 'Preprint: Enhanced magnetic resolution in elliptical PHE sensors (under review at Measurement)' },
+    measurement: { short: 'Measurement preprint', full: 'Preprint: Enhanced magnetic resolution in elliptical PHE sensors (in press at Measurement)' },
     array: { short: 'Array preprint', full: 'Preprint: Physics-guided multi-view conditioning for super-resolution (under review at Array)' },
-    slides: { short: 'Talk slides', full: 'Conference talk slides (IEEE Sensors, EMSA, KLA-BINA)' },
-    posters: { short: 'Poster PDFs', full: 'Poster PDFs (Intermag, IPS, BINA Annual)' },
+    slides: { short: 'Talk slides', full: 'Conference talk slides (MMM-Intermag, KLA-BINA, EMSA)' },
+    posters: { short: 'Poster PDFs', full: 'Poster PDFs (MMM-Intermag, iSIM, BINA)' },
     teaching: { short: 'Teaching materials', full: 'Teaching materials: lab guides, problem sets, and training checklists' }
   };
 
@@ -28,10 +27,14 @@
   function openMenu() {
     var sheet = $('#menu-sheet');
     if (sheet) { sheet.classList.add('open'); document.body.classList.add('menu-open'); }
+    var btn = $('[data-action="open-menu"]');
+    if (btn) btn.setAttribute('aria-expanded', 'true');
   }
   function closeMenu() {
     var sheet = $('#menu-sheet');
     if (sheet) { sheet.classList.remove('open'); document.body.classList.remove('menu-open'); }
+    var btn = $('[data-action="open-menu"]');
+    if (btn) btn.setAttribute('aria-expanded', 'false');
   }
   function openDialog(id) { var d = document.getElementById(id); if (d && !d.open) d.showModal(); }
   function closeDialog(id) { var d = document.getElementById(id); if (d && d.open) d.close(); }
@@ -61,9 +64,28 @@
     setTimeout(function () { btn.textContent = original; btn.classList.remove('copied'); }, 1800);
   }
 
+  function fallbackCopy(text) {
+    var ta = document.createElement('textarea');
+    ta.value = text;
+    ta.setAttribute('readonly', '');
+    ta.style.position = 'fixed';
+    ta.style.opacity = '0';
+    document.body.appendChild(ta);
+    ta.select();
+    var ok = false;
+    try { ok = document.execCommand('copy'); } catch (err) { ok = false; }
+    document.body.removeChild(ta);
+    return ok;
+  }
+
   function copyText(text, btn) {
     if (navigator.clipboard && navigator.clipboard.writeText) {
-      navigator.clipboard.writeText(text).then(function () { flashLabel(btn, 'Copied ✓'); });
+      navigator.clipboard.writeText(text).then(
+        function () { flashLabel(btn, 'Copied ✓'); },
+        function () { flashLabel(btn, fallbackCopy(text) ? 'Copied ✓' : 'Copy failed'); }
+      );
+    } else {
+      flashLabel(btn, fallbackCopy(text) ? 'Copied ✓' : 'Copy failed');
     }
   }
 
