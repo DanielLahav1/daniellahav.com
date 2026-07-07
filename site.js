@@ -9,8 +9,11 @@
     apl2023: { short: 'APL 2023 author copy', full: 'Author copy: Flexible planar Hall effect sensor with sub-200 pT resolution (Applied Physics Letters, 2023)' },
     measurement: { short: 'Measurement preprint', full: 'Preprint: Enhanced magnetic resolution in elliptical PHE sensors (in press at Measurement)' },
     array: { short: 'Array preprint', full: 'Preprint: Physics-guided multi-view conditioning for super-resolution (under review at Array)' },
-    slides: { short: 'Talk slides', full: 'Conference talk slides (MMM-Intermag, KLA-BINA, EMSA)' },
-    posters: { short: 'Poster PDFs', full: 'Poster PDFs (MMM-Intermag, iSIM, BINA)' },
+    bina2025talk: { short: 'BINA 2025 slides', full: 'Talk slides: Multi-Functional Flexible Planar Hall Effect Sensors (BINA Conference 2025)' },
+    klabina2026: { short: 'KLA-BINA 2026 slides', full: 'Talk slides: Flexible Spintronics Under Strain (KLA-BINA Outstanding Students Seminar 2026)' },
+    mmm2025talk: { short: 'MMM-Intermag 2025 slides', full: 'Talk slides: Multi-Functional Flexible Planar Hall Effect Sensors (2025 Joint MMM-Intermag)' },
+    emsa2026talk: { short: 'EMSA 2026 slides', full: 'Talk slides: Multifunctional High-Resolution Flexible Elliptical Planar Hall Effect Sensors for Magnetometry and Strain Sensing (EMSA 2026)' },
+    fieldrangeposter: { short: 'Field-range poster', full: 'Poster: Expanding the Field Range of PHE Sensors for Increased Industrial Applicability (MMM-Intermag / iSIM / BINA 2025)' },
     teaching: { short: 'Teaching materials', full: 'Teaching materials: lab guides, problem sets, and training checklists' }
   };
 
