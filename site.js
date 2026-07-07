@@ -13,7 +13,6 @@
     klabina2026: { short: 'KLA-BINA 2026 slides', full: 'Talk slides: Flexible Spintronics Under Strain (KLA-BINA Outstanding Students Seminar 2026)' },
     mmm2025talk: { short: 'MMM-Intermag 2025 slides', full: 'Talk slides: Multi-Functional Flexible Planar Hall Effect Sensors (2025 Joint MMM-Intermag)' },
     emsa2026talk: { short: 'EMSA 2026 slides', full: 'Talk slides: Multifunctional High-Resolution Flexible Elliptical Planar Hall Effect Sensors for Magnetometry and Strain Sensing (EMSA 2026)' },
-    fieldrangeposter: { short: 'Field-range poster', full: 'Poster: Expanding the Field Range of PHE Sensors for Increased Industrial Applicability (MMM-Intermag / iSIM / BINA 2025)' },
     teaching: { short: 'Teaching materials', full: 'Teaching materials: lab guides, problem sets, and training checklists' }
   };
 
