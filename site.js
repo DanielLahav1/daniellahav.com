@@ -115,4 +115,21 @@
         break;
     }
   });
+
+  // Hover-to-play talk-opening videos
+  (function () {
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduce) return;
+    document.querySelectorAll('.work-card').forEach(function (card) {
+      var v = card.querySelector('.talk-video');
+      if (!v) return;
+      function play() { v.play().catch(function () {}); }
+      function stop() { v.pause(); try { v.currentTime = 0; } catch (e) {} }
+      card.addEventListener('mouseenter', play);
+      card.addEventListener('mouseleave', stop);
+      card.addEventListener('focusin', play);
+      card.addEventListener('focusout', stop);
+    });
+  })();
+
 })();
