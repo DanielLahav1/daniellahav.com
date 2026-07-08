@@ -316,6 +316,12 @@ body.menu-open { overflow: hidden; }
 
 /* ---------- Outline cards (conferences & service) ---------- */
 .outline-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 40px; }
+.service-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 40px; align-items: stretch; }
+.service-grid .svc { display: flex; flex-direction: column; }
+.service-grid .svc .overline { margin-bottom: 10px; }
+.service-grid .svc h3 { margin: 0; }
+.service-grid .svc p { font-size: 14.5px; color: var(--text-body); line-height: 1.6; margin: 10px 0 0; }
+.service-grid .svc .doi { margin-top: auto; padding-top: 16px; }
 .outline-card {
   background: var(--outline-card-bg);
   border: 1px solid var(--line); border-radius: var(--radius-surface);
@@ -454,7 +460,7 @@ body.menu-open { overflow: hidden; }
 @media (max-width: 960px) {
   .hero-grid { grid-template-columns: 1fr; gap: 44px; }
   .hero-grid > figure { max-width: 370px; margin: 0 auto; }
-  .profile-grid, .two-col, .outline-grid { grid-template-columns: 1fr; gap: 40px; }
+  .profile-grid, .two-col, .outline-grid, .service-grid { grid-template-columns: 1fr; gap: 40px; }
   .two-col .section-head h2 { min-height: 0; } /* no reserved 2nd line once columns stack */
   .card-grid { grid-template-columns: 1fr; }
   .work-grid { grid-template-columns: 1fr; }
