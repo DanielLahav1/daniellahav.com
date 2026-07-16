@@ -8,6 +8,7 @@
     thesis: { short: 'PhD thesis chapters', full: 'PhD thesis chapters: Flexible spintronics under strain (in progress)' },
     apl2023: { short: 'APL 2023 author copy', full: 'Author copy: Flexible planar Hall effect sensor with sub-200 pT resolution (Applied Physics Letters, 2023)' },
     measurement: { short: 'Measurement preprint', full: 'Preprint: Enhanced Magnetic Resolution in Elliptical Planar Hall Effect Sensors via Non-Collinear Anisotropy Engineering (under review at Measurement)' },
+    shape: { short: 'Shape-anisotropy manuscript', full: 'Manuscript: Shape anisotropy in patterned soft ferromagnets is constant only above a crossover field (in preparation)' },
     array: { short: 'Array preprint', full: 'Preprint: Enhancing Super-Resolution Fidelity through Physics-Guided Multi-View Conditioning (under review at Array)' },
     bina2025talk: { short: 'BINA 2025 slides', full: 'Talk slides: Multi-Functional Flexible Planar Hall Effect Sensors (BINA Conference 2025)' },
     klabina2026: { short: 'KLA-BINA 2026 slides', full: 'Talk slides: Flexible Spintronics Under Strain (KLA-BINA Outstanding Students Seminar 2026)' },
