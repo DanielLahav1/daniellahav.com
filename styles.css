@@ -444,6 +444,18 @@ body.menu-open { overflow: hidden; }
 .status-pill.gold { background: var(--primary); color: var(--on-primary); border-color: var(--primary); }
 .work-actions { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; margin-top: auto; padding-top: 4px; }
 .work-actions .doi { font-size: 13.5px; color: var(--gold-text); text-decoration: underline; text-underline-offset: 3px; }
+/* record apparatus carried on the light work cards */
+.work-card .authors { font-size: 12.5px; color: var(--text-muted); line-height: 1.5; margin: 0; }
+.work-card .authors strong { color: var(--text); font-weight: 700; }
+.work-card .bibtex-btn { border-color: var(--line); color: var(--gold-text); }
+.work-card .bibtex-btn:hover { border-color: var(--gold-strong); color: var(--gold-strong); }
+.work-card .bibtex-btn.copied { border-color: #2f7d4f; color: #2f7d4f; }
+.card-press { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 4px 14px; align-items: baseline; font-size: 12.5px; }
+.card-press .press-label { font-weight: 700; text-transform: uppercase; letter-spacing: .08em; font-size: 10.5px; color: var(--text-muted); }
+.card-press a { color: var(--gold-text); text-decoration: underline; text-underline-offset: 2px; }
+.card-press a:hover { color: var(--gold-strong); }
+/* land the Publications anchor clear of the 64px sticky nav */
+#publications { scroll-margin-top: 80px; }
 
 /* ---------- Featured work + subpage blocks ---------- */
 .feature-work { background: var(--navy); border: 1px solid var(--navy-line); border-radius: 16px; padding: 40px; display: grid; grid-template-columns: 1.05fr .95fr; gap: 44px; align-items: center; margin-top: 44px; }
