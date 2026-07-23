@@ -17,6 +17,9 @@
     <meta name="twitter:title" content="Daniel Lahav | Ph.D. Candidate · Physics, Bar-Ilan University">
     <meta name="twitter:description" content="Daniel Lahav, Ph.D. candidate in experimental condensed matter and spintronics at Bar-Ilan University. Flexible planar Hall effect sensors with sub-200 pT resolution.">
     <meta name="twitter:image" content="https://daniellahav.com/assets/og-image.jpg">
+    <meta property="og:image:alt" content="Daniel Lahav — Ph.D. Candidate in Physics, Bar-Ilan University">
+    <meta name="twitter:image:alt" content="Daniel Lahav — Ph.D. Candidate in Physics, Bar-Ilan University">
+    <meta name="theme-color" content="#faf9f5">
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -40,7 +43,9 @@
       ]
     }
     </script>
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cellipse cx='16' cy='16' rx='13' ry='8' fill='none' stroke='%23c29a4a' stroke-width='3' transform='rotate(-20 16 16)'/%3E%3C/svg%3E">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="/favicon.ico" sizes="32x32">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preload" href="/assets/fonts/cormorant-garamond.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/spectral-400.woff2" as="font" type="font/woff2" crossorigin>
@@ -68,7 +73,7 @@
       </nav>
       <div class="nav-actions">
         <button class="btn-secondary" type="button" data-action="open-contact">Contact</button>
-        <button class="menu-toggle" type="button" aria-label="Open menu" data-action="open-menu">
+        <button class="menu-toggle" type="button" aria-label="Open menu" data-action="open-menu" aria-controls="menu-sheet" aria-expanded="false">
           <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M2 4.5h14M2 9h14M2 13.5h14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path></svg>
         </button>
       </div>
@@ -93,7 +98,7 @@
     </div>
   </div>
 
-  <main id="main">
+  <main id="main" tabindex="-1">
     <section class="hero" id="top" data-screen-label="Hero">
       <div class="wrap">
         <div class="hero-grid">
@@ -111,7 +116,7 @@
           <figure class="portrait-card">
             <img src="assets/daniel-lahav.jpg"
                  srcset="assets/daniel-lahav-sm.jpg 439w, assets/daniel-lahav.jpg 879w"
-                 sizes="(max-width: 768px) 216px, 370px"
+                 sizes="(max-width: 768px) 196px, (max-width: 960px) 334px, 420px"
                  alt="Portrait of Daniel Lahav" width="879" height="1100" fetchpriority="high">
           </figure>
         </div>
@@ -143,7 +148,7 @@
             </div>
             <div class="fact">
               <span class="overline">Methods</span>
-              <p>Sputtering &amp; lithography &middot; magnetotransport &middot; noise spectroscopy &middot; MOKE &middot; AFM &amp; SEM &middot; custom bending stages</p>
+              <p>Sputtering &amp; lithography &middot; magnetotransport &middot; noise spectroscopy &middot; AFM &amp; SEM &middot; custom bending stages</p>
             </div>
             <div class="fact">
               <span class="overline">Tools</span>
@@ -170,7 +175,7 @@
           </article>
           <article class="feature-card">
             <img class="work-fig" src="assets/research/flexible-hero.jpg" alt="Flexible elliptical planar Hall effect sensor on a bent translucent substrate" loading="lazy">
-            <span class="overline">PhD thesis · In progress</span>
+            <span class="overline">Ph.D. thesis · In progress</span>
             <h3>Flexible spintronics under strain</h3>
             <p>Bending a sensor to a 10 mm radius flips its magnetization easy axis and tunes the effective anisotropy field from 7.2 to 17.8 Oe, reversibly. The same physics lets one device read magnetic field and strain at once.</p>
             <a class="doi" href="/research/">More on the research page</a>
@@ -255,22 +260,22 @@
           <div>
             <div class="section-head">
               <span class="overline">Education &amp; recognition</span>
-              <h2>Physics at <span class="nowrap">Bar-Ilan</span>, from BSc to PhD.</h2>
+              <h2>Physics at <span class="nowrap">Bar-Ilan</span>, from B.Sc. to Ph.D.</h2>
             </div>
             <ul class="timeline">
               <li>
                 <div class="t-when">2024 &ndash; Present</div>
-                <div class="t-what">PhD in Physics, Bar-Ilan University</div>
+                <div class="t-what">Ph.D. in Physics, Bar-Ilan University</div>
                 <div class="t-note">Thesis: Flexible Spintronics Under Strain &middot; Advisor: Prof. Lior Klein.</div>
               </li>
               <li>
                 <div class="t-when">2022 &ndash; 2024</div>
-                <div class="t-what">MSc in Physics, Bar-Ilan University</div>
+                <div class="t-what">M.Sc. in Physics, Bar-Ilan University</div>
                 <div class="t-note">Magna cum laude &middot; Thesis: Flexible Planar Hall Effect Sensors Under Strain.</div>
               </li>
               <li>
                 <div class="t-when">2019 &ndash; 2022</div>
-                <div class="t-what">BSc in Physics, Bar-Ilan University</div>
+                <div class="t-what">B.Sc. in Physics, Bar-Ilan University</div>
               </li>
             </ul>
           </div>
@@ -315,8 +320,8 @@
             <ul class="timeline">
               <li>
                 <div class="t-when">2024 &ndash; Present</div>
-                <div class="t-what">PhD Researcher &middot; Klein Group, Bar-Ilan University</div>
-                <div class="t-note">Flexible spintronics under strain: device fabrication, magnetotransport and noise measurements, MOKE imaging, and micromagnetic simulations.</div>
+                <div class="t-what">Ph.D. Researcher &middot; Klein Group, Bar-Ilan University</div>
+                <div class="t-note">Flexible spintronics under strain: device fabrication, magnetotransport and noise measurements, and AFM characterization.</div>
               </li>
               <li>
                 <div class="t-when">2023 &ndash; Present</div>
@@ -337,7 +342,7 @@
             </div>
             <ul class="plain-list" style="margin-top:27px;">
               <li><span class="what">Nanofabrication</span> &middot; <span class="where">mask &amp; maskless lithography, wafer bonding, ion-beam and BesTec sputtering, dicing, ICP-RIE</span></li>
-              <li><span class="what">Characterization</span> &middot; <span class="where">AFM, SEM, MOKE, magnetotransport, noise spectroscopy</span></li>
+              <li><span class="what">Characterization</span> &middot; <span class="where">AFM, SEM, magnetotransport, noise spectroscopy</span></li>
               <li><span class="what">Programming &amp; software</span> &middot; <span class="where">Python, MATLAB, C++, LabVIEW, COMSOL</span></li>
               <li><span class="what">CAD &amp; systems</span> &middot; <span class="where">AutoCAD, Fusion 360, SolidWorks, CleWin; custom low-noise measurement systems</span></li>
             </ul>
@@ -381,7 +386,7 @@
             <h3>Teaching &amp; service</h3>
             <ul class="plain-list">
               <li><span class="what"><a href="/teaching/">Physics lab instruction</a></span> &middot; <span class="where">four courses + tutoring, Dept. of Physics</span></li>
-              <li><span class="what">Cleanroom user training</span> &middot; <span class="where">Nano-Fabrication Center, BINA</span></li>
+              <li><span class="what">Cleanroom fabrication support</span> &middot; <span class="where">Nano-Fabrication Center, BINA</span></li>
               <li><span class="what">Student representative, Physics Department</span> &middot; <span class="where">BIU Student Association, 2023 &ndash; Present</span></li>
             </ul>
           </div>
@@ -427,17 +432,17 @@
         </div>
       </div>
       <div class="footer-note">
-        <span>Department of Physics &amp; Institute of Nanotechnology (BINA), Bar-Ilan University, Ramat-Gan, Israel</span>
+        <span>Department of Physics &amp; Institute of Nanotechnology and Advanced Materials (BINA), Bar-Ilan University, Ramat-Gan, Israel</span>
         <span>© 2026 Daniel Lahav · daniellahav.com</span>
       </div>
     </div>
   </footer>
 
-  <dialog class="contact-dialog" id="contact-dialog" data-screen-label="Contact dialog">
+  <dialog class="contact-dialog" id="contact-dialog" aria-labelledby="contact-title" data-screen-label="Contact dialog">
     <div class="dialog-inner">
       <button class="dialog-close" type="button" aria-label="Close" data-action="close-contact">✕</button>
       <span class="overline">Contact</span>
-      <h3>Get in touch</h3>
+      <h3 id="contact-title">Get in touch</h3>
       <p class="sub">For research, collaborations, or questions about my work.</p>
       <div class="contact-actions">
         <a class="btn-primary" href="mailto:daniel.lahav@biu.ac.il">Email · daniel.lahav@biu.ac.il</a>
@@ -452,7 +457,7 @@
     </div>
   </dialog>
 
-  <dialog class="contact-dialog" id="request-dialog" data-screen-label="Request dialog">
+  <dialog class="contact-dialog" id="request-dialog" aria-labelledby="request-title" data-screen-label="Request dialog">
     <div class="dialog-inner">
       <button class="dialog-close" type="button" aria-label="Close" data-action="close-request">✕</button>
       <span class="overline">Request access</span>

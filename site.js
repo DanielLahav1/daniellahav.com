@@ -5,7 +5,7 @@
   var EMAIL = 'daniel.lahav@biu.ac.il';
 
   var REQUEST_ITEMS = {
-    thesis: { short: 'PhD thesis chapters', full: 'PhD thesis chapters: Flexible spintronics under strain (in progress)' },
+    thesis: { short: 'Ph.D. thesis chapters', full: 'Ph.D. thesis chapters: Flexible spintronics under strain (in progress)' },
     apl2023: { short: 'APL 2023 author copy', full: 'Author copy: Flexible planar Hall effect sensor with sub-200 pT resolution (Applied Physics Letters, 2023)' },
     measurement: { short: 'Measurement preprint', full: 'Preprint: Enhanced Magnetic Resolution in Elliptical Planar Hall Effect Sensors via Non-Collinear Anisotropy Engineering (under review at Measurement)' },
     shape: { short: 'Shape-anisotropy manuscript', full: 'Manuscript: Shape anisotropy in patterned soft ferromagnets is constant only above a crossover field (in preparation)' },
@@ -32,12 +32,18 @@
     if (sheet) { sheet.classList.add('open'); document.body.classList.add('menu-open'); }
     var btn = $('[data-action="open-menu"]');
     if (btn) btn.setAttribute('aria-expanded', 'true');
+    var closeBtn = $('#menu-sheet [data-action="close-menu"]');
+    if (closeBtn) closeBtn.focus();
   }
   function closeMenu() {
     var sheet = $('#menu-sheet');
+    var wasOpen = sheet && sheet.classList.contains('open');
     if (sheet) { sheet.classList.remove('open'); document.body.classList.remove('menu-open'); }
     var btn = $('[data-action="open-menu"]');
-    if (btn) btn.setAttribute('aria-expanded', 'false');
+    if (btn) {
+      btn.setAttribute('aria-expanded', 'false');
+      if (wasOpen) btn.focus();
+    }
   }
   function openDialog(id) { var d = document.getElementById(id); if (d && !d.open) d.showModal(); }
   function closeDialog(id) { var d = document.getElementById(id); if (d && d.open) d.close(); }
@@ -115,6 +121,14 @@
         copyText('To: ' + EMAIL + '\nSubject: Access request: ' + item.short + '\n\n' + requestBody(item), el);
         break;
     }
+  });
+
+  // Escape closes the mobile menu only while it is open.
+  // Native <dialog> elements manage their own Escape, so we never touch them here.
+  document.addEventListener('keydown', function (e) {
+    if (e.key !== 'Escape' && e.key !== 'Esc') return;
+    var sheet = $('#menu-sheet');
+    if (sheet && sheet.classList.contains('open')) { closeMenu(); }
   });
 
   // Hover-to-play talk-opening videos
