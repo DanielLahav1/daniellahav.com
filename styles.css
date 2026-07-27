@@ -431,6 +431,8 @@ body.menu-open { overflow: hidden; }
 .work-fig.contain { object-fit: contain; background: var(--white); }
 /* photos pre-cropped to 7:4 — box matches the file, so nothing is cropped at any width */
 .work-fig.photo { height: auto; aspect-ratio: 7 / 4; }
+/* publication cards: taller box so paper figures are legible rather than letterboxed to a sliver */
+.work-grid.pubs .work-fig { height: auto; aspect-ratio: 16 / 9; }
 .work-card .work-fig { border: 1px solid var(--line); background: var(--white); }
 /* hover-to-play talk-opening video */
 .video-viewer { position: relative; height: 190px; border-radius: 8px; overflow: hidden; background: var(--cream-soft); }
