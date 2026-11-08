@@ -7,10 +7,10 @@
   var REQUEST_ITEMS = {
     thesis: { short: 'Ph.D. thesis chapters', full: 'Ph.D. thesis chapters: Flexible spintronics under strain (in progress)' },
     apl2023: { short: 'APL 2023 author copy', full: 'Author copy: Flexible planar Hall effect sensor with sub-200 pT resolution (Applied Physics Letters, 2023)' },
-    measurement: { short: 'Measurement preprint', full: 'Preprint: Enhanced Magnetic Resolution in Elliptical Planar Hall Effect Sensors via Non-Collinear Anisotropy Engineering (under review at Measurement)' },
-    shape: { short: 'Shape-anisotropy preprint', full: 'Preprint: Shape anisotropy in patterned soft ferromagnets is constant only above a crossover field (under review at Communications Physics)' },
+    measurement: { short: 'Measurement author copy', full: 'Author copy: Enhanced Magnetic Resolution in Elliptical Planar Hall Effect Sensors via Non-Collinear Anisotropy Engineering (Measurement, 2026)' },
+    shape: { short: 'Shape-anisotropy preprint', full: 'Preprint: Shape anisotropy in patterned soft ferromagnets is constant only above a crossover field (under review at Advanced Electronic Materials)' },
     array: { short: 'Array preprint', full: 'Preprint: Enhancing Super-Resolution Fidelity through Physics-Guided Multi-View Conditioning (under review at Array)' },
-    mad: { short: 'MAD-optimization manuscript', full: 'Manuscript: Multi-Objective Optimization of Magnetic Anomaly Detection with Planar Hall Effect Sensors (submitted to IEEE Sensors Journal)' },
+    mad: { short: 'MAD-optimization manuscript', full: 'Manuscript: Multi-Objective Optimization of Magnetic Anomaly Detection with Planar Hall Effect Sensors (under review at IEEE Sensors Journal)' },
     bina2025talk: { short: 'BINA 2025 slides', full: 'Talk slides: Multi-Functional Flexible Planar Hall Effect Sensors (BINA Conference 2025)' },
     klabina2026: { short: 'KLA-BINA 2026 slides', full: 'Talk slides: Flexible Spintronics Under Strain (KLA-BINA Seminar 2026)' },
     mmm2025talk: { short: 'MMM-Intermag 2025 slides', full: 'Talk slides: Multi-Functional Flexible Planar Hall Effect Sensors (2025 Joint MMM-Intermag)' },
@@ -21,7 +21,8 @@
   var BIBS = {
     1: '@article{vizel2025magnetic,\n  author  = {Vizel, M. and Alimi, R. and Lahav, D. and Schultz, M. and Amrusi, S. and Grosz, A. and Klein, L.},\n  title   = {Magnetic Source Detection Using an Array of Planar Hall Effect Sensors and Machine Learning Algorithms},\n  journal = {Applied Sciences},\n  volume  = {15},\n  number  = {2},\n  pages   = {964},\n  year    = {2025},\n  doi     = {10.3390/app15020964}\n}',
     2: '@article{lahav2024planar,\n  author  = {Lahav, D. and Schultz, M. and Amrusi, S. and Grosz, A. and Klein, L.},\n  title   = {Planar Hall Effect Magnetic Sensors with Extended Field Range},\n  journal = {Sensors},\n  volume  = {24},\n  number  = {13},\n  pages   = {4384},\n  year    = {2024},\n  doi     = {10.3390/s24134384}\n}',
-    3: '@article{nhalil2023flexible,\n  author  = {Nhalil, H. and Lahav, D. and Schultz, M. and Amrusi, S. and Grosz, A. and Klein, L.},\n  title   = {Flexible Planar Hall Effect Sensor with sub-200 pT Resolution},\n  journal = {Applied Physics Letters},\n  volume  = {123},\n  number  = {2},\n  pages   = {024102},\n  year    = {2023},\n  doi     = {10.1063/5.0156588}\n}'
+    3: '@article{nhalil2023flexible,\n  author  = {Nhalil, H. and Lahav, D. and Schultz, M. and Amrusi, S. and Grosz, A. and Klein, L.},\n  title   = {Flexible Planar Hall Effect Sensor with sub-200 pT Resolution},\n  journal = {Applied Physics Letters},\n  volume  = {123},\n  number  = {2},\n  pages   = {024102},\n  year    = {2023},\n  doi     = {10.1063/5.0156588}\n}',
+    4: '@article{lahav2026enhanced,\n  author  = {Lahav, D. and Schultz, M. and Grosz, A. and Klein, L.},\n  title   = {Enhanced Magnetic Resolution in Elliptical Planar Hall Effect Sensors via Non-Collinear Anisotropy Engineering},\n  journal = {Measurement},\n  pages   = {123683},\n  year    = {2026},\n  doi     = {10.1016/j.measurement.2026.123683}\n}'
   };
 
   var currentRequest = 'thesis';
